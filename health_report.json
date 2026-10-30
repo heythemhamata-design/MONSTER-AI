@@ -1,0 +1,140 @@
+{
+  "working": [
+    {
+      "model": "pol/gpt-oss",
+      "ok": true,
+      "latency": 1.56
+    },
+    {
+      "model": "pol/kimi-k3",
+      "ok": true,
+      "latency": 2.36
+    },
+    {
+      "model": "pol/deepseek-pro",
+      "ok": true,
+      "latency": 1.5
+    },
+    {
+      "model": "pol/gpt-5.6-luna",
+      "ok": true,
+      "latency": 1.45
+    },
+    {
+      "model": "pol/glm-5.3",
+      "ok": true,
+      "latency": 2.08
+    },
+    {
+      "model": "pol/llama",
+      "ok": true,
+      "latency": 2.76
+    },
+    {
+      "model": "pol/command-a-plus",
+      "ok": true,
+      "latency": 2.81
+    },
+    {
+      "model": "glm/glm-5.3",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "glm/glm-5.3-flash",
+      "ok": true,
+      "latency": 2.31
+    },
+    {
+      "model": "glm/glm-5.2",
+      "ok": true,
+      "latency": 2.31
+    }
+  ],
+  "broken": [
+    {
+      "model": "pol/grok-4.6",
+      "ok": false,
+      "reason": "ReadTimeout: ",
+      "latency": 12.63
+    },
+    {
+      "model": "gh/gpt-5.6-luna",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.54
+    },
+    {
+      "model": "gh/gpt-5.6-sol",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.66
+    },
+    {
+      "model": "gh/claude-sonnet-5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.62
+    },
+    {
+      "model": "gh/claude-opus-4.8",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.7
+    },
+    {
+      "model": "gh/gemini-3.7-flash",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.1
+    },
+    {
+      "model": "gh/kimi-k3",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 0.93
+    },
+    {
+      "model": "oc/claude-sonnet-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.34
+    },
+    {
+      "model": "oc/gpt-5.6-luna",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gpt-5.6-sol",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gemini-3.7-flash",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.32
+    },
+    {
+      "model": "oc/kimi-k3",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.32
+    },
+    {
+      "model": "oc/deepseek-v4-flash-free",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: Error from provider (Console): Upstream request failed: Model is unavailable.\",\"type\":\"server_error\",\"code\":\"bad_request\"},\"upstream_details\":{\"error\":{\"type\":\"server_error",
+      "latency": 1.04
+    },
+    {
+      "model": "xai-oauth/grok-4.5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.5] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/supergrok. (reset aft",
+      "latency": 0.88
+    }
+  ]
+}

@@ -1,0 +1,1943 @@
+{
+  "generated_at": "2026-09-18 21:21:09",
+  "total_tested": 180,
+  "total_working": 51,
+  "routes": {
+    "auto/smart": [
+      "agy/gemini-3.1-pro-low",
+      "groq/openai/gpt-oss-120b",
+      "groq/llama-3.3-70b-versatile",
+      "cerebras/gpt-oss-120b",
+      "glm/glm-5.3-max"
+    ],
+    "auto/coding": [
+      "moonshot/kimi-k2.7-code",
+      "kmc/kimi-for-coding-highspeed",
+      "kmc/kimi-for-coding"
+    ],
+    "auto/fast": [
+      "gemini/gemini-3-flash-preview",
+      "gemini/gemini-3.1-flash-lite",
+      "cohere/c4ai-aya-vision-32b",
+      "cohere/c4ai-aya-expanse-32b",
+      "ollamacloud/gpt-oss:20b"
+    ],
+    "auto/reasoning": [
+      "gemini/gemini-3-flash-preview",
+      "gemini/gemini-3.1-flash-lite",
+      "agy/gemini-3.8-flash-tiered",
+      "agy/gemini-3.1-pro-low",
+      "agy/gemini-3.7-flash-high"
+    ],
+    "auto/vision": [
+      "gemini/gemini-3-flash-preview",
+      "gemini/gemini-3.1-flash-lite",
+      "agy/gemini-3.8-flash-tiered",
+      "agy/gemini-3.1-pro-low",
+      "agy/gemini-3.7-flash-high"
+    ],
+    "auto/cheap": [
+      "gemini/gemini-3-flash-preview",
+      "gemini/gemini-3.1-flash-lite",
+      "agy/gemini-3.8-flash-tiered"
+    ],
+    "auto/balanced": [
+      "gemini/gemini-3-flash-preview",
+      "gemini/gemini-3.1-flash-lite",
+      "agy/gemini-3.8-flash-tiered",
+      "openai/babbage-002",
+      "agy/gemini-3.1-pro-low"
+    ]
+  },
+  "working": [
+    {
+      "id": "gemini/gemini-3-flash-preview",
+      "ok": true,
+      "latency": 1.74,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "gemini/gemini-3.1-flash-lite",
+      "ok": true,
+      "latency": 1.95,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "agy/gemini-3.8-flash-tiered",
+      "ok": true,
+      "latency": 2.28,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "openai/babbage-002",
+      "ok": true,
+      "latency": 2.28,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": []
+    },
+    {
+      "id": "agy/gemini-3.1-pro-low",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "premium",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "openai/text-embedding-ada-002",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": []
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-16k",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "openai/gpt-3.5-turbo",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "openai/davinci-002",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": []
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-instruct-0914",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "agy/gemini-3.7-flash-high",
+      "ok": true,
+      "latency": 2.31,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "agy/gemini-3.7-flash-tiered",
+      "ok": true,
+      "latency": 2.31,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-instruct",
+      "ok": true,
+      "latency": 2.31,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "agy/gemini-3.7-flash-medium",
+      "ok": true,
+      "latency": 2.32,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "agy/gemini-3.7-flash-low",
+      "ok": true,
+      "latency": 2.35,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "groq/openai/gpt-oss-120b",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "groq/",
+      "rank": 3,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "groq/meta-llama/llama-4-scout-17b-16e-instruct",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "groq/",
+      "rank": 3,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "groq/llama-3.3-70b-versatile",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "groq/",
+      "rank": 3,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "cerebras/gpt-oss-120b",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "cerebras/",
+      "rank": 3,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "cerebras/gemma-4-31b",
+      "ok": true,
+      "latency": 2.31,
+      "prefix": "cerebras/",
+      "rank": 3,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "groq/openai/gpt-oss-20b",
+      "ok": true,
+      "latency": 2.32,
+      "prefix": "groq/",
+      "rank": 3,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "groq/qwen/qwen3-32b",
+      "ok": true,
+      "latency": 2.33,
+      "prefix": "groq/",
+      "rank": 3,
+      "tags": []
+    },
+    {
+      "id": "cerebras/zai-glm-4.7",
+      "ok": true,
+      "latency": 2.35,
+      "prefix": "cerebras/",
+      "rank": 3,
+      "tags": []
+    },
+    {
+      "id": "glm/glm-5.2",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "glm/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "moonshot/kimi-k2.7-code",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "moonshot/",
+      "rank": 4,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "glm/glm-5.3-low",
+      "ok": true,
+      "latency": 2.31,
+      "prefix": "glm/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "glm/glm-5.3-max",
+      "ok": true,
+      "latency": 2.31,
+      "prefix": "glm/",
+      "rank": 4,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "moonshot/kimi-k2.6",
+      "ok": true,
+      "latency": 2.33,
+      "prefix": "moonshot/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "glm/glm-5.3-high",
+      "ok": true,
+      "latency": 2.35,
+      "prefix": "glm/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "glm/glm-5.3",
+      "ok": true,
+      "latency": 2.39,
+      "prefix": "glm/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "cohere/c4ai-aya-vision-32b",
+      "ok": true,
+      "latency": 0.84,
+      "prefix": "cohere/",
+      "rank": 5,
+      "tags": [
+        "vision"
+      ]
+    },
+    {
+      "id": "cohere/c4ai-aya-expanse-32b",
+      "ok": true,
+      "latency": 0.94,
+      "prefix": "cohere/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "ollamacloud/gpt-oss:20b",
+      "ok": true,
+      "latency": 1.26,
+      "prefix": "ollamacloud/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "cohere/command-a-03-2025",
+      "ok": true,
+      "latency": 1.37,
+      "prefix": "cohere/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "ollama-cloud/gpt-oss:20b",
+      "ok": true,
+      "latency": 2.0,
+      "prefix": "ollama-cloud/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "friendli/zai-org/GLM-5.3",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "friendli/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "friendliai/zai-org/GLM-5.3",
+      "ok": true,
+      "latency": 2.37,
+      "prefix": "friendliai/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "cursor/cursor-grok-4.6-low-fast",
+      "ok": true,
+      "latency": 1.11,
+      "prefix": "cursor/",
+      "rank": 6,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "cu/cursor-grok-4.6-low-fast",
+      "ok": true,
+      "latency": 1.24,
+      "prefix": "cu/",
+      "rank": 6,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "cursor/cursor-grok-4.6-low",
+      "ok": true,
+      "latency": 2.13,
+      "prefix": "cursor/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "cu/cursor-grok-4.6-low",
+      "ok": true,
+      "latency": 2.19,
+      "prefix": "cu/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "mimo/mimo-v2.5",
+      "ok": true,
+      "latency": 2.29,
+      "prefix": "mimo/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "cu/default",
+      "ok": true,
+      "latency": 2.3,
+      "prefix": "cu/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "cursor/default",
+      "ok": true,
+      "latency": 2.32,
+      "prefix": "cursor/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "kmc/kimi-for-coding-highspeed",
+      "ok": true,
+      "latency": 2.32,
+      "prefix": "kmc/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "mimo/mimo-v2.5-pro",
+      "ok": true,
+      "latency": 2.36,
+      "prefix": "mimo/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "kmc/kimi-for-coding",
+      "ok": true,
+      "latency": 2.4,
+      "prefix": "kmc/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "kilocode/kilo-auto/free",
+      "ok": true,
+      "latency": 2.94,
+      "prefix": "kilocode/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "kilocode/kilo-auto/efficient",
+      "ok": true,
+      "latency": 3.07,
+      "prefix": "kilocode/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "kc/kilo-auto/free",
+      "ok": true,
+      "latency": 3.25,
+      "prefix": "kc/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "kc/kilo-auto/efficient",
+      "ok": true,
+      "latency": 3.32,
+      "prefix": "kc/",
+      "rank": 6,
+      "tags": []
+    }
+  ],
+  "broken": [
+    {
+      "id": "pol/mistral",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mistral' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"i",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": []
+    },
+    {
+      "id": "pol/gemini",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"in",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pol/gemini-flash-lite-3.1",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-flash-lite-3.1' is not available in the active live catalog for provider 'pollination",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pol/gemini-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pol/gemini-search",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-search' is not available in the active live catalog for provider 'pollinations'.\",\"ty",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pol/claude-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pol/claude",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"in",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": []
+    },
+    {
+      "id": "pol/claude-large",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-large' is not available in the active live catalog for provider 'pollinations'.\",\"typ",
+      "latency": 0,
+      "prefix": "pol/",
+      "rank": 1,
+      "tags": []
+    },
+    {
+      "id": "pollinations/mistral",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mistral' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"i",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": []
+    },
+    {
+      "id": "pollinations/gemini",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"in",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pollinations/gemini-flash-lite-3.1",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-flash-lite-3.1' is not available in the active live catalog for provider 'pollination",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pollinations/gemini-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pollinations/gemini-search",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-search' is not available in the active live catalog for provider 'pollinations'.\",\"ty",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pollinations/claude-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "pollinations/claude",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"in",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": []
+    },
+    {
+      "id": "pollinations/claude-large",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-large' is not available in the active live catalog for provider 'pollinations'.\",\"typ",
+      "latency": 0,
+      "prefix": "pollinations/",
+      "rank": 1,
+      "tags": []
+    },
+    {
+      "id": "agy/claude-sonnet-4-6",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6] All antigravity accounts have exhausted their quota (reset after 5m",
+      "latency": 0,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "reasoning",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "agy/gpt-oss-120b-medium",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/gpt-oss-120b-medium] All antigravity accounts have exhausted their quota (reset after ",
+      "latency": 0,
+      "prefix": "agy/",
+      "rank": 2,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "gh/claude-opus-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "gh/claude-sonnet-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.6' is not available in the active live catalog for provider 'github'.\",\"type",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "gh/claude-opus-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4-5-20251101' is not available in the active live catalog for provider 'github'.",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "gh/claude-sonnet-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.5' is not available in the active live catalog for provider 'github'.\",\"type",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "gh/gemini-3.1-pro-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.1-pro-preview' is not available in the active live catalog for provider 'github'.\",",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "premium",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "gh/gpt-5.3-codex",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-5.3-codex' is not available in the active live catalog for provider 'github'.\",\"type\":\"i",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "gh/gpt-4-0125-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-4-0125-preview' is not available in the active live catalog for provider 'github'.\",\"typ",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": []
+    },
+    {
+      "id": "gh/mai-code-1-flash",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mai-code-1-flash' is not available in the active live catalog for provider 'github'.\",\"type\"",
+      "latency": 0,
+      "prefix": "gh/",
+      "rank": 2,
+      "tags": [
+        "coding",
+        "fast"
+      ]
+    },
+    {
+      "id": "github/claude-opus-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "github/claude-sonnet-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.6' is not available in the active live catalog for provider 'github'.\",\"type",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "github/claude-opus-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4-5-20251101' is not available in the active live catalog for provider 'github'.",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "github/claude-sonnet-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.5' is not available in the active live catalog for provider 'github'.\",\"type",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "github/gemini-3.1-pro-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.1-pro-preview' is not available in the active live catalog for provider 'github'.\",",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "premium",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "github/gpt-5.3-codex",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-5.3-codex' is not available in the active live catalog for provider 'github'.\",\"type\":\"i",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "github/gpt-4-0125-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-4-0125-preview' is not available in the active live catalog for provider 'github'.\",\"typ",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": []
+    },
+    {
+      "id": "github/mai-code-1-flash",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mai-code-1-flash' is not available in the active live catalog for provider 'github'.\",\"type\"",
+      "latency": 0,
+      "prefix": "github/",
+      "rank": 2,
+      "tags": [
+        "coding",
+        "fast"
+      ]
+    },
+    {
+      "id": "openai/gpt-5.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-5.6' is not available in the active live catalog for provider 'openai'.\",\"type\":\"invalid",
+      "latency": 0,
+      "prefix": "openai/",
+      "rank": 2,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "gemini/gemini-3.7-flash",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.7-flash' is not available in the active live catalog for provider 'gemini'.\",\"type\"",
+      "latency": 0,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "gemini/gemini-3.1-pro-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.1-pro-preview' is not available in the active live catalog for provider 'gemini'.\",",
+      "latency": 0,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "premium",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "gemini/gemini-3.1-flash-tts-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.1-flash-tts-preview' is not available in the active live catalog for provider 'gemi",
+      "latency": 0,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "vision",
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "gemini/gemini-2.5-pro",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-2.5-pro' is not available in the active live catalog for provider 'gemini'.\",\"type\":\"",
+      "latency": 0,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "gemini/gemini-2.5-flash",
+      "ok": false,
+      "reason": "HTTP 404: {\"error\":{\"message\":\"[gemini/gemini-2.5-flash] [404]: This model models/gemini-2.5-flash is no longer available to new u",
+      "latency": 0,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "gemini/gemini-2.5-flash-lite",
+      "ok": false,
+      "reason": "HTTP 404: {\"error\":{\"message\":\"[gemini/gemini-2.5-flash-lite] [404]: This model models/gemini-2.5-flash-lite is no longer availabl",
+      "latency": 0,
+      "prefix": "gemini/",
+      "rank": 2,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "xao/grok-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"inv",
+      "latency": 0,
+      "prefix": "xao/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xao/grok-4.5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.5] [402]: You have run out of credits or need a Grok subscription. Add credits at",
+      "latency": 0,
+      "prefix": "xao/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xao/grok-4.3",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.3] [402]: You have run out of credits or need a Grok subscription. Add credits at",
+      "latency": 0,
+      "prefix": "xao/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xao/grok-build-0.1",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[xai-oauth] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"auth",
+      "latency": 0,
+      "prefix": "xao/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xao/grok-4.20-multi-agent-0309",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[xai-oauth] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"auth",
+      "latency": 0,
+      "prefix": "xao/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xai-oauth/grok-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"inv",
+      "latency": 0,
+      "prefix": "xai-oauth/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xai-oauth/grok-4.5",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"All credentials for model grok-4.5 are cooling down\",\"type\":\"rate_limit_error\",\"code\":\"model_cooldo",
+      "latency": 0,
+      "prefix": "xai-oauth/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xai-oauth/grok-4.3",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"All credentials for model grok-4.3 are cooling down\",\"type\":\"rate_limit_error\",\"code\":\"model_cooldo",
+      "latency": 0,
+      "prefix": "xai-oauth/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xai-oauth/grok-build-0.1",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[xai-oauth] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"auth",
+      "latency": 0,
+      "prefix": "xai-oauth/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "xai-oauth/grok-4.20-multi-agent-0309",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[xai-oauth] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"auth",
+      "latency": 0,
+      "prefix": "xai-oauth/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "zc/glm-5.3",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "zc/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "zc/glm-5.3-max",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "zc/",
+      "rank": 4,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "zc/glm-5.2",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "zc/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "zc/glm-5.1",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "zc/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "zc/glm-5",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "zc/",
+      "rank": 4,
+      "tags": []
+    },
+    {
+      "id": "minimax/MiniMax-M3",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: insufficient balance (1008)\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0,
+      "prefix": "minimax/",
+      "rank": 4,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "minimax/MiniMax-M2.7",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: insufficient balance (1008)\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0,
+      "prefix": "minimax/",
+      "rank": 4,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "minimax/MiniMax-M2.7-highspeed",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: insufficient balance (1008)\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0,
+      "prefix": "minimax/",
+      "rank": 4,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "minimax/MiniMax-M2.5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: insufficient balance (1008)\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0,
+      "prefix": "minimax/",
+      "rank": 4,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "minimax/MiniMax-M2.5-highspeed",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: insufficient balance (1008)\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0,
+      "prefix": "minimax/",
+      "rank": 4,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "moonshot/kimi-k3",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'kimi-k3' is not available in the active live catalog for provider 'moonshot'.\",\"type\":\"inval",
+      "latency": 0,
+      "prefix": "moonshot/",
+      "rank": 4,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "moonshot/kimi-k2.7-code-highspeed",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'kimi-k2.7-code-highspeed' is not available in the active live catalog for provider 'moonshot",
+      "latency": 0,
+      "prefix": "moonshot/",
+      "rank": 4,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "openrouter/auto",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'auto' is not available in the active live catalog for provider 'openrouter'.\",\"type\":\"invali",
+      "latency": 0,
+      "prefix": "openrouter/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "openrouter/unbiased/pareto",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[openrouter/unbiased/pareto] [402]: This request requires more credits, or fewer max_tokens. You re",
+      "latency": 0,
+      "prefix": "openrouter/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "openrouter/~deepseek/deepseek-pro-latest",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[openrouter/~deepseek/deepseek-pro-latest] [402]: This request requires more credits, or fewer max_",
+      "latency": 0,
+      "prefix": "openrouter/",
+      "rank": 5,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "nanogpt/chatgpt-4o-latest",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'chatgpt-4o-latest' is not available in the active live catalog for provider 'nanogpt'.\",\"typ",
+      "latency": 0,
+      "prefix": "nanogpt/",
+      "rank": 5,
+      "tags": [
+        "vision",
+        "fast"
+      ]
+    },
+    {
+      "id": "nanogpt/claude-3.5-sonnet",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-3.5-sonnet' is not available in the active live catalog for provider 'nanogpt'.\",\"typ",
+      "latency": 0,
+      "prefix": "nanogpt/",
+      "rank": 5,
+      "tags": [
+        "premium",
+        "coding",
+        "fast"
+      ]
+    },
+    {
+      "id": "nanogpt/gpt-4o-mini",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-4o-mini' is not available in the active live catalog for provider 'nanogpt'.\",\"type\":\"in",
+      "latency": 0,
+      "prefix": "nanogpt/",
+      "rank": 5,
+      "tags": [
+        "vision",
+        "fast"
+      ]
+    },
+    {
+      "id": "nvidia/z-ai/glm-5.2",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'z-ai/glm-5.2' is not available in the active live catalog for provider 'nvidia'.\",\"type\":\"in",
+      "latency": 0,
+      "prefix": "nvidia/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "nvidia/minimaxai/minimax-m2.7",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'minimaxai/minimax-m2.7' is not available in the active live catalog for provider 'nvidia'.\",",
+      "latency": 0,
+      "prefix": "nvidia/",
+      "rank": 5,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "nvidia/mistralai/mistral-small-4-119b-2603",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mistralai/mistral-small-4-119b-2603' is not available in the active live catalog for provide",
+      "latency": 0,
+      "prefix": "nvidia/",
+      "rank": 5,
+      "tags": []
+    },
+    {
+      "id": "ollamacloud/gpt-oss:120b",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-oss-120b' is not available in the active live catalog for provider 'ollama-cloud'.\",\"typ",
+      "latency": 0,
+      "prefix": "ollamacloud/",
+      "rank": 5,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "ollamacloud/deepseek-v4-pro",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'deepseek-v4-pro' is not available in the active live catalog for provider 'ollama-cloud'.\",\"",
+      "latency": 0,
+      "prefix": "ollamacloud/",
+      "rank": 5,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "ollama-cloud/gpt-oss:120b",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-oss-120b' is not available in the active live catalog for provider 'ollama-cloud'.\",\"typ",
+      "latency": 0,
+      "prefix": "ollama-cloud/",
+      "rank": 5,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "ollama-cloud/deepseek-v4-pro",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'deepseek-v4-pro' is not available in the active live catalog for provider 'ollama-cloud'.\",\"",
+      "latency": 0,
+      "prefix": "ollama-cloud/",
+      "rank": 5,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "deepinfra/anthropic/claude-4-opus",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'anthropic/claude-4-opus' is not available in the active live catalog for provider 'deepinfra",
+      "latency": 0,
+      "prefix": "deepinfra/",
+      "rank": 5,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "deepinfra/anthropic/claude-4-sonnet",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'anthropic/claude-4-sonnet' is not available in the active live catalog for provider 'deepinf",
+      "latency": 0,
+      "prefix": "deepinfra/",
+      "rank": 5,
+      "tags": [
+        "premium",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "deepinfra/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning' is not available in the active live catalog f",
+      "latency": 0,
+      "prefix": "deepinfra/",
+      "rank": 5,
+      "tags": [
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "friendli/meta-llama-3.1-70b-instruct",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'meta-llama-3.1-70b-instruct' is not available in the active live catalog for provider 'frien",
+      "latency": 0,
+      "prefix": "friendli/",
+      "rank": 5,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "friendli/meta-llama-3.1-8b-instruct",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'meta-llama-3.1-8b-instruct' is not available in the active live catalog for provider 'friend",
+      "latency": 0,
+      "prefix": "friendli/",
+      "rank": 5,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "friendliai/meta-llama-3.1-70b-instruct",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'meta-llama-3.1-70b-instruct' is not available in the active live catalog for provider 'frien",
+      "latency": 0,
+      "prefix": "friendliai/",
+      "rank": 5,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "friendliai/meta-llama-3.1-8b-instruct",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'meta-llama-3.1-8b-instruct' is not available in the active live catalog for provider 'friend",
+      "latency": 0,
+      "prefix": "friendliai/",
+      "rank": 5,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "no-think/agy/claude-sonnet-4-6",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6] All antigravity accounts have exhausted their quota (reset after 5m",
+      "latency": 0,
+      "prefix": "no-think/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "reasoning",
+        "coding",
+        "vision"
+      ]
+    },
+    {
+      "id": "no-think/agy/claude-opus-4-6-thinking",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking] All antigravity accounts have exhausted their quota (reset a",
+      "latency": 0,
+      "prefix": "no-think/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "no-think/gh/claude-opus-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":",
+      "latency": 0,
+      "prefix": "no-think/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "cx/gpt-5.6-sol-max",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[codex/gpt-5.6-sol-max] All codex accounts reached configured quota threshold (reset after 96h 29m ",
+      "latency": 0,
+      "prefix": "cx/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "cx/gpt-5.6-sol-xhigh",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[codex/gpt-5.6-sol-xhigh] All codex accounts reached configured quota threshold (reset after 96h 29",
+      "latency": 0,
+      "prefix": "cx/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "cx/gpt-5.6-sol-high",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[codex/gpt-5.6-sol-high] All codex accounts reached configured quota threshold (reset after 96h 29m",
+      "latency": 0,
+      "prefix": "cx/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "codex/gpt-5.6-sol-max",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[codex/gpt-5.6-sol-max] All codex accounts reached configured quota threshold (reset after 96h 29m ",
+      "latency": 0,
+      "prefix": "codex/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "codex/gpt-5.6-sol-xhigh",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[codex/gpt-5.6-sol-xhigh] All codex accounts reached configured quota threshold (reset after 96h 29",
+      "latency": 0,
+      "prefix": "codex/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "codex/gpt-5.6-sol-high",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[codex/gpt-5.6-sol-high] All codex accounts reached configured quota threshold (reset after 96h 29m",
+      "latency": 0,
+      "prefix": "codex/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "kmc/k3",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: You've reached your monthly usage limit for this billing cycle. Your quota will be refreshed",
+      "latency": 0,
+      "prefix": "kmc/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "kimi-coding/kimi-for-coding",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: You've reached your monthly usage limit for this billing cycle. Your quota will be refreshed",
+      "latency": 0,
+      "prefix": "kimi-coding/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "kimi-coding/kimi-for-coding-highspeed",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: You've reached your monthly usage limit for this billing cycle. Your quota will be refreshed",
+      "latency": 0,
+      "prefix": "kimi-coding/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "kimi-coding/k3",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: You've reached your monthly usage limit for this billing cycle. Your quota will be refreshed",
+      "latency": 0,
+      "prefix": "kimi-coding/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "kc/qwen/qwen3.8-max",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen/qwen3.8-max' is not available in the active live catalog for provider 'kilocode'.\",\"typ",
+      "latency": 0,
+      "prefix": "kc/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "kilocode/qwen/qwen3.8-max",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen/qwen3.8-max' is not available in the active live catalog for provider 'kilocode'.\",\"typ",
+      "latency": 0,
+      "prefix": "kilocode/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "dva/swe-1-7-lightning",
+      "ok": false,
+      "reason": "HTTP 500: {\"error\":{\"message\":\"[500]: DEVIN_AGENTIC_HOME must be an absolute path inside the bridge sandbox\",\"type\":\"server_error\"",
+      "latency": 0,
+      "prefix": "dva/",
+      "rank": 6,
+      "tags": [
+        "coding",
+        "fast"
+      ]
+    },
+    {
+      "id": "dva/swe-1-7",
+      "ok": false,
+      "reason": "HTTP 500: {\"error\":{\"message\":\"[500]: DEVIN_AGENTIC_HOME must be an absolute path inside the bridge sandbox\",\"type\":\"server_error\"",
+      "latency": 0,
+      "prefix": "dva/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "dva/swe-1-6-fast",
+      "ok": false,
+      "reason": "HTTP 500: {\"error\":{\"message\":\"[500]: DEVIN_AGENTIC_HOME must be an absolute path inside the bridge sandbox\",\"type\":\"server_error\"",
+      "latency": 0,
+      "prefix": "dva/",
+      "rank": 6,
+      "tags": [
+        "coding",
+        "fast"
+      ]
+    },
+    {
+      "id": "oc/hy3-free",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'hy3-free' is not available in the active live catalog for provider 'opencode'.\",\"type\":\"inva",
+      "latency": 0,
+      "prefix": "oc/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "oc/north-mini-code-free",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'north-mini-code-free' is not available in the active live catalog for provider 'opencode'.\",",
+      "latency": 0,
+      "prefix": "oc/",
+      "rank": 6,
+      "tags": [
+        "coding",
+        "fast"
+      ]
+    },
+    {
+      "id": "oc/claude-fable-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_",
+      "latency": 0,
+      "prefix": "oc/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "opencode/claude-fable-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[opencode-zen/claude-fable-5] [402]: This model requires an opencode API key — add one in Settings ",
+      "latency": 0,
+      "prefix": "opencode/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "opencode/claude-fable-5-1",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[opencode-zen/claude-fable-5-1] [402]: This model requires an opencode API key — add one in Setting",
+      "latency": 0,
+      "prefix": "opencode/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "opencode/claude-opus-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[opencode-zen/claude-opus-5] [402]: This model requires an opencode API key — add one in Settings →",
+      "latency": 0,
+      "prefix": "opencode/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "reasoning",
+        "vision"
+      ]
+    },
+    {
+      "id": "ddgw/gpt-5.4-mini",
+      "ok": false,
+      "reason": "HTTP 418: {\"error\":{\"message\":\"[418]: DuckDuckGo AI Chat anti-abuse challenge failed: ERR_BN_LIMIT (7b08). Retry later or from a l",
+      "latency": 0,
+      "prefix": "ddgw/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "ddgw/gpt-5.4-nano",
+      "ok": false,
+      "reason": "HTTP 418: {\"error\":{\"message\":\"[418]: DuckDuckGo AI Chat anti-abuse challenge failed: ERR_BN_LIMIT (7b08). Retry later or from a l",
+      "latency": 0,
+      "prefix": "ddgw/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "fast"
+      ]
+    },
+    {
+      "id": "ddgw/claude-haiku-4-5",
+      "ok": false,
+      "reason": "HTTP 418: {\"error\":{\"message\":\"[418]: DuckDuckGo AI Chat anti-abuse challenge failed: ERR_BN_LIMIT (7b08). Retry later or from a l",
+      "latency": 0,
+      "prefix": "ddgw/",
+      "rank": 6,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "cfp/zai-org/glm-5.2",
+      "ok": false,
+      "reason": "ReadTimeout",
+      "latency": 0,
+      "prefix": "cfp/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "cfp/moonshotai/kimi-k2.7-code",
+      "ok": false,
+      "reason": "ReadTimeout",
+      "latency": 0,
+      "prefix": "cfp/",
+      "rank": 6,
+      "tags": [
+        "coding"
+      ]
+    },
+    {
+      "id": "cfp/moonshotai/kimi-k2.6",
+      "ok": false,
+      "reason": "ReadTimeout",
+      "latency": 0,
+      "prefix": "cfp/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "felo/felo-chat",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[429]: Felo thread creation failed with HTTP 429\",\"type\":\"rate_limit_error\",\"code\":\"rate_limit_exce",
+      "latency": 0,
+      "prefix": "felo/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "felo/felo-search",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: Felo thread creation failed with HTTP 400\",\"type\":\"invalid_request_error\",\"code\":\"bad_reques",
+      "latency": 0,
+      "prefix": "felo/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "felo/felo-scholar",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: Felo thread creation failed with HTTP 400\",\"type\":\"invalid_request_error\",\"code\":\"bad_reques",
+      "latency": 0,
+      "prefix": "felo/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "tllm/GPT_5_4",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: The Old LLM is blocked by Vercel for this server egress IP. Configure a residential provider",
+      "latency": 0,
+      "prefix": "tllm/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "tllm/GPT_5_3",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: The Old LLM is blocked by Vercel for this server egress IP. Configure a residential provider",
+      "latency": 0,
+      "prefix": "tllm/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "tllm/GPT_5_2",
+      "ok": false,
+      "reason": "HTTP 403: {\"error\":{\"message\":\"[403]: The Old LLM is blocked by Vercel for this server egress IP. Configure a residential provider",
+      "latency": 0,
+      "prefix": "tllm/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "pepper/pepper-1",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"[502]: Amelia init failed: 404\",\"type\":\"server_error\",\"code\":\"bad_gateway\"}}",
+      "latency": 0,
+      "prefix": "pepper/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "aug/sonnet4.6",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "aug/",
+      "rank": 6,
+      "tags": [
+        "premium",
+        "coding"
+      ]
+    },
+    {
+      "id": "aug/fable-5",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "aug/",
+      "rank": 6,
+      "tags": []
+    },
+    {
+      "id": "aug/haiku4.5",
+      "ok": false,
+      "reason": "HTTP 502: {\"error\":{\"message\":\"Stream ended before producing a non-ping SSE event\",\"type\":\"stream_early_eof\",\"code\":\"STREAM_EARLY_",
+      "latency": 0,
+      "prefix": "aug/",
+      "rank": 6,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "cxa/gpt-5.6-sol",
+      "ok": false,
+      "reason": "HTTP 503: {\"error\":{\"message\":\"[503]: Codex app-server transport is not configured (missing url or token)\",\"type\":\"server_error\",\"",
+      "latency": 0,
+      "prefix": "cxa/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "cxa/gpt-5.6-sol-ultra",
+      "ok": false,
+      "reason": "HTTP 503: {\"error\":{\"message\":\"[503]: Codex app-server transport is not configured (missing url or token)\",\"type\":\"server_error\",\"",
+      "latency": 0,
+      "prefix": "cxa/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "cxa/gpt-5.6-sol-max",
+      "ok": false,
+      "reason": "HTTP 503: {\"error\":{\"message\":\"[503]: Codex app-server transport is not configured (missing url or token)\",\"type\":\"server_error\",\"",
+      "latency": 0,
+      "prefix": "cxa/",
+      "rank": 6,
+      "tags": [
+        "premium"
+      ]
+    },
+    {
+      "id": "unc/adamo1139/Hermes-3-Llama-3.1-8B-FP8-Dynamic",
+      "ok": false,
+      "reason": "HTTP 404: {\"error\":{\"message\":\"[404]: The model `adamo1139/Hermes-3-Llama-3.1-8B-FP8-Dynamic` does not exist.\",\"type\":\"invalid_req",
+      "latency": 0,
+      "prefix": "unc/",
+      "rank": 6,
+      "tags": [
+        "reasoning",
+        "fast"
+      ]
+    },
+    {
+      "id": "unc/qwen3.6:27b",
+      "ok": false,
+      "reason": "HTTP 404: {\"error\":{\"message\":\"[404]: The model `qwen3.6:27b` does not exist.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_fo",
+      "latency": 0,
+      "prefix": "unc/",
+      "rank": 6,
+      "tags": [
+        "fast"
+      ]
+    },
+    {
+      "id": "unc/gemma4:31b",
+      "ok": false,
+      "reason": "HTTP 404: {\"error\":{\"message\":\"[404]: The model `gemma4:31b` does not exist.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_fou",
+      "latency": 0,
+      "prefix": "unc/",
+      "rank": 6,
+      "tags": [
+        "fast"
+      ]
+    }
+  ]
+}

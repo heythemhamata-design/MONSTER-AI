@@ -1,0 +1,75 @@
+{
+  "routes": {
+    "auto/smart": [
+      "xao/grok-4.20-0309-non-reasoning",
+      "openrouter/qwen/qwen3-vl-8b-thinking",
+      "openrouter/perplexity/sonar-reasoning-pro",
+      "openrouter/qwen/qwen3-235b-a22b-thinking-2507",
+      "openrouter/qwen/qwen3-vl-235b-a22b-thinking",
+      "openrouter/~anthropic/claude-opus-latest-medium",
+      "openrouter/~anthropic/claude-opus-latest-xhigh",
+      "openrouter/qwen/qwen3-30b-a3b-thinking-2507"
+    ],
+    "auto/coding": [
+      "pol/qwen-coder",
+      "pollinations/qwen-coder",
+      "openrouter/qwen/qwen-2.5-coder-32b-instruct",
+      "openrouter/openrouter/pareto-code",
+      "openrouter/qwen/qwen3-coder",
+      "openrouter/qwen/qwen3-coder-30b-a3b-instruct",
+      "openrouter/qwen/qwen3-coder-plus",
+      "openrouter/qwen/qwen3-coder-next"
+    ],
+    "auto/fast": [
+      "pol/deepseek/deepseek-v4-flash-vision-exp",
+      "pol/gemini-flash-lite-3.1",
+      "pollinations/openai-fast",
+      "pol/minimax",
+      "pollinations/z-ai/glm-5.3-flash",
+      "pol/z-ai/glm-5.3-flash",
+      "pollinations/nova-fast",
+      "pol/nova-fast"
+    ],
+    "auto/reasoning": [
+      "openrouter/qwen/qwen3-vl-8b-thinking",
+      "openrouter/perplexity/sonar-reasoning-pro",
+      "openrouter/qwen/qwen3-235b-a22b-thinking-2507",
+      "openrouter/qwen/qwen3-vl-235b-a22b-thinking",
+      "openrouter/~anthropic/claude-opus-latest-medium",
+      "openrouter/~anthropic/claude-opus-latest-xhigh",
+      "openrouter/qwen/qwen3-30b-a3b-thinking-2507",
+      "openrouter/qwen/qwen3-next-80b-a3b-thinking"
+    ],
+    "auto/vision": [
+      "pol/gpt-5.6-sol",
+      "pol/gpt-5.6-luna",
+      "pollinations/gpt-5.6-sol",
+      "pollinations/gpt-5.6-luna",
+      "agy/gemini-3.1-flash-image",
+      "agy/gemini-3.7-flash-medium",
+      "agy/gemini-3.7-flash-low",
+      "agy/gemini-3.7-flash-tiered"
+    ],
+    "auto/cheap": [
+      "pol/gpt-oss",
+      "pol/gpt-5.6-sol",
+      "pol/grok-4.6",
+      "pol/gpt-5.6-luna",
+      "pol/grok-large",
+      "pollinations/openai-large",
+      "pollinations/gpt-oss",
+      "pol/deepseek-pro"
+    ],
+    "auto/balanced": [
+      "pol/gpt-oss",
+      "pol/gpt-5.6-sol",
+      "pol/grok-4.6",
+      "pol/gpt-5.6-luna",
+      "pol/grok-large",
+      "pollinations/openai-large",
+      "pollinations/gpt-oss",
+      "pol/deepseek-pro"
+    ]
+  },
+  "ultimate": "pol/gpt-oss"
+}

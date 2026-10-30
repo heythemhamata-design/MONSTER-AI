@@ -1,0 +1,861 @@
+{
+  "tested": 142,
+  "working": [
+    {
+      "model": "pol/gpt-oss",
+      "ok": true,
+      "latency": 0.88
+    },
+    {
+      "model": "pol/perplexity",
+      "ok": true,
+      "latency": 0.89
+    },
+    {
+      "model": "pol/minimax",
+      "ok": true,
+      "latency": 0.92
+    },
+    {
+      "model": "pol/kimi-code",
+      "ok": true,
+      "latency": 0.93
+    },
+    {
+      "model": "pol/gpt-5.6-terra",
+      "ok": true,
+      "latency": 0.94
+    },
+    {
+      "model": "pol/z-ai/glm-5.3-flash",
+      "ok": true,
+      "latency": 0.97
+    },
+    {
+      "model": "pol/gpt-5.6-luna",
+      "ok": true,
+      "latency": 0.99
+    },
+    {
+      "model": "pol/gpt-5.6-sol",
+      "ok": true,
+      "latency": 1.0
+    },
+    {
+      "model": "pol/command-a-plus",
+      "ok": true,
+      "latency": 1.01
+    },
+    {
+      "model": "pol/deepseek/deepseek-v4-flash-vision-exp",
+      "ok": true,
+      "latency": 1.03
+    },
+    {
+      "model": "pol/kimi-k3",
+      "ok": true,
+      "latency": 1.06
+    },
+    {
+      "model": "pol/openai",
+      "ok": true,
+      "latency": 1.08
+    },
+    {
+      "model": "pol/grok-4.6",
+      "ok": true,
+      "latency": 1.09
+    },
+    {
+      "model": "pol/glm-5.3",
+      "ok": true,
+      "latency": 1.14
+    },
+    {
+      "model": "pol/nemotron-3.5-lightning",
+      "ok": true,
+      "latency": 1.15
+    },
+    {
+      "model": "pol/muse-glimmer",
+      "ok": true,
+      "latency": 1.27
+    },
+    {
+      "model": "pol/qwen3.8-2.4t-a95b",
+      "ok": true,
+      "latency": 1.28
+    },
+    {
+      "model": "glm/glm-4.7",
+      "ok": true,
+      "latency": 2.27
+    },
+    {
+      "model": "agy/gemini-3.1-pro-low",
+      "ok": true,
+      "latency": 2.27
+    },
+    {
+      "model": "agy/gemini-3.1-flash-lite",
+      "ok": true,
+      "latency": 2.27
+    },
+    {
+      "model": "agy/gemini-3.1-pro-high",
+      "ok": true,
+      "latency": 2.27
+    },
+    {
+      "model": "glm/glm-5.2-max",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "glm/glm-4.5",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "glm/glm-4.5-air",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "glm/glm-5-turbo",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "agy/gemini-3.7-flash-tiered",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "agy/gemini-3.1-flash-image",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "agy/gemini-3.6-flash-low",
+      "ok": true,
+      "latency": 2.28
+    },
+    {
+      "model": "glm/glm-5.2-high",
+      "ok": true,
+      "latency": 2.29
+    },
+    {
+      "model": "glm/glm-4.6",
+      "ok": true,
+      "latency": 2.29
+    },
+    {
+      "model": "agy/gemini-3-flash",
+      "ok": true,
+      "latency": 2.29
+    },
+    {
+      "model": "agy/gemini-3.5-flash-lite",
+      "ok": true,
+      "latency": 2.29
+    },
+    {
+      "model": "agy/gemini-pro-agent",
+      "ok": true,
+      "latency": 2.29
+    },
+    {
+      "model": "glm/glm-5.3-max",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "glm/glm-5.2",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "glm/glm-5",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "glm/glm-5.1",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "glm/glm-5.3-flash",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "agy/gemini-3.7-flash-medium",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "agy/gemini-3.7-flash-low",
+      "ok": true,
+      "latency": 2.3
+    },
+    {
+      "model": "glm/glm-5.3-high",
+      "ok": true,
+      "latency": 2.31
+    },
+    {
+      "model": "glm/glm-5.3-low",
+      "ok": true,
+      "latency": 2.31
+    },
+    {
+      "model": "agy/gemini-3.6-flash-tiered",
+      "ok": true,
+      "latency": 2.31
+    },
+    {
+      "model": "xai-oauth/grok-4.20-0309-non-reasoning",
+      "ok": true,
+      "latency": 2.31
+    },
+    {
+      "model": "agy/gemini-3.7-flash-high",
+      "ok": true,
+      "latency": 2.32
+    },
+    {
+      "model": "agy/gemini-3.8-flash-tiered",
+      "ok": true,
+      "latency": 2.32
+    },
+    {
+      "model": "glm/glm-5.3",
+      "ok": true,
+      "latency": 2.33
+    },
+    {
+      "model": "xai-oauth/grok-4.20-0309-reasoning",
+      "ok": true,
+      "latency": 2.34
+    }
+  ],
+  "broken": [
+    {
+      "model": "pol/mistral",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mistral' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.39
+    },
+    {
+      "model": "pol/gemini",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.39
+    },
+    {
+      "model": "pol/gemini-flash-lite-3.1",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-flash-lite-3.1' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.39
+    },
+    {
+      "model": "pol/gemini-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.4
+    },
+    {
+      "model": "pol/gemini-search",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-search' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.4
+    },
+    {
+      "model": "pol/claude-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.4
+    },
+    {
+      "model": "pol/claude",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.42
+    },
+    {
+      "model": "pol/claude-large",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.4
+    },
+    {
+      "model": "pol/gemini-large",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.42
+    },
+    {
+      "model": "pol/polly",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'polly' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.42
+    },
+    {
+      "model": "pol/qwen-coder-large",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen-coder-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "pol/qwen-large",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "pol/qwen-vision",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen-vision' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.31
+    },
+    {
+      "model": "gh/claude-opus-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "gh/claude-sonnet-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "gh/claude-opus-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4-5-20251101' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "gh/claude-sonnet-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.5' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.31
+    },
+    {
+      "model": "gh/gemini-3.1-pro-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.1-pro-preview' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "gh/gpt-5.3-codex",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-5.3-codex' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "gh/gpt-4-0125-preview",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-4-0125-preview' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/mai-code-1-flash",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mai-code-1-flash' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "gh/mai-code-1-flash-picker",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mai-code-1-flash-picker' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "gh/grok-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "gh/grok-4.5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.5' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/oswe-vscode-prime",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'oswe-vscode-prime' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "gh/claude-fable-5.1",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.17
+    },
+    {
+      "model": "gh/claude-fable-5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-fable-5] [400]: The requested model is not supported. (reset after 2m)\"}}",
+      "latency": 1.82
+    },
+    {
+      "model": "gh/claude-opus-4.7",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-opus-4.7] [400]: The requested model is not supported. (reset after 2m)\"}}",
+      "latency": 1.64
+    },
+    {
+      "model": "gh/claude-opus-4.8-fast",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is not suppo",
+      "latency": 1.09
+    },
+    {
+      "model": "gh/claude-opus-4.8",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-opus-4.8] [400]: The requested model is not supported. (reset after 2m)\"}}",
+      "latency": 1.62
+    },
+    {
+      "model": "gh/claude-opus-5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-opus-5] [400]: The requested model is not supported. (reset after 2m)\"}}",
+      "latency": 1.83
+    },
+    {
+      "model": "gh/claude-sonnet-5",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-sonnet-5] [400]: The requested model is not supported. (reset after 2m)\"}}",
+      "latency": 1.7
+    },
+    {
+      "model": "gh/copilot-search-a",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[github/copilot-search-a] [402]: You have exceeded your monthly quota (reset after 24h)\"}}",
+      "latency": 1.04
+    },
+    {
+      "model": "gh/copilot-search-b",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[github/copilot-search-b] [402]: You have exceeded your monthly quota (reset after 24h)\"}}",
+      "latency": 1.06
+    },
+    {
+      "model": "gh/copilot-search-c",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[github/copilot-search-c] [402]: You have exceeded your monthly quota (reset after 24h)\"}}",
+      "latency": 1.02
+    },
+    {
+      "model": "gh/exec-agent-a",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/exec-agent-b",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/exec-agent-c",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/gemini-3.5-flash",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/gemini-3.6-flash",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/gemini-3.7-flash",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/gemini-3.8-flash",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "gh/gpt-5.4-mini",
+      "ok": false,
+      "reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "oc/hy3-free",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'hy3-free' is not available in the active live catalog for provider 'opencode'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "oc/north-mini-code-free",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'north-mini-code-free' is not available in the active live catalog for provider 'opencode'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "oc/claude-fable-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "oc/claude-fable-5-1",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.32
+    },
+    {
+      "model": "oc/claude-opus-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.32
+    },
+    {
+      "model": "oc/claude-opus-4-8",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/claude-opus-4-7",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/claude-opus-4-6",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.35
+    },
+    {
+      "model": "oc/claude-opus-4-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.36
+    },
+    {
+      "model": "oc/claude-sonnet-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.38
+    },
+    {
+      "model": "oc/claude-sonnet-4-6",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.39
+    },
+    {
+      "model": "oc/claude-sonnet-4-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/claude-sonnet-4",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.37
+    },
+    {
+      "model": "oc/claude-haiku-4-5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.37
+    },
+    {
+      "model": "oc/gemini-3.6-flash",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.37
+    },
+    {
+      "model": "oc/gemini-3.8-flash",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.37
+    },
+    {
+      "model": "oc/gemini-3.7-flash",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.34
+    },
+    {
+      "model": "oc/gemini-3.5-flash-lite",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.35
+    },
+    {
+      "model": "oc/gemini-3.5-flash",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.35
+    },
+    {
+      "model": "oc/gemini-3.1-pro",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.36
+    },
+    {
+      "model": "oc/gemini-3-flash",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.35
+    },
+    {
+      "model": "oc/gpt-6-astra",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.36
+    },
+    {
+      "model": "oc/gpt-5.6-sol",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gpt-5.6-terra",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gpt-5.6-luna",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.32
+    },
+    {
+      "model": "oc/gpt-5.5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gpt-5.5-pro",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gpt-5.4",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.33
+    },
+    {
+      "model": "oc/gpt-5.4-pro",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.34
+    },
+    {
+      "model": "oc/gpt-5.4-mini",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}",
+      "latency": 0.34
+    },
+    {
+      "model": "glm/glm-4.7-flash",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'glm-4.7-flash' is not available in the active live catalog for provider 'glm'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "glm/glm-4.6v",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'glm-4.6v' is not available in the active live catalog for provider 'glm'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "glm/glm-4.5v",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'glm-4.5v' is not available in the active live catalog for provider 'glm'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "agy/claude-sonnet-4-6",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "agy/gpt-oss-120b-medium",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/gpt-oss-120b-medium] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "agy/claude-opus-4-6-thinking",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "agy/claude-sonnet-4-6-low",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6-low] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "agy/claude-sonnet-4-6-medium",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6-medium] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "agy/claude-sonnet-4-6-high",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6-high] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "agy/claude-opus-4-6-thinking-low",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking-low] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "agy/claude-opus-4-6-thinking-medium",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking-medium] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "agy/claude-opus-4-6-thinking-high",
+      "ok": false,
+      "reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking-high] All antigravity accounts have exhausted their quota (reset after 5m)\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "xai-oauth/grok-4.6",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.28
+    },
+    {
+      "model": "xai-oauth/grok-4.5",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.5] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/supergrok. (reset aft",
+      "latency": 0.87
+    },
+    {
+      "model": "xai-oauth/grok-4.3",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.3] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/supergrok. (reset aft",
+      "latency": 0.74
+    },
+    {
+      "model": "xai-oauth/grok-build-0.1",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-build-0.1] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/supergrok. (res",
+      "latency": 0.85
+    },
+    {
+      "model": "xai-oauth/grok-4.20-multi-agent-0309",
+      "ok": false,
+      "reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.20-multi-agent-0309] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/sup",
+      "latency": 0.76
+    },
+    {
+      "model": "xai-oauth/grok-4.6-low",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-low' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.3
+    },
+    {
+      "model": "xai-oauth/grok-4.6-medium",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-medium' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "xai-oauth/grok-4.6-high",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-high' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.29
+    },
+    {
+      "model": "xai-oauth/grok-4.6-xhigh",
+      "ok": false,
+      "reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-xhigh' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}",
+      "latency": 0.28
+    }
+  ],
+  "working_ids": [
+    "pol/gpt-oss",
+    "pol/perplexity",
+    "pol/minimax",
+    "pol/kimi-code",
+    "pol/gpt-5.6-terra",
+    "pol/z-ai/glm-5.3-flash",
+    "pol/gpt-5.6-luna",
+    "pol/gpt-5.6-sol",
+    "pol/command-a-plus",
+    "pol/deepseek/deepseek-v4-flash-vision-exp",
+    "pol/kimi-k3",
+    "pol/openai",
+    "pol/grok-4.6",
+    "pol/glm-5.3",
+    "pol/nemotron-3.5-lightning",
+    "pol/muse-glimmer",
+    "pol/qwen3.8-2.4t-a95b",
+    "glm/glm-4.7",
+    "agy/gemini-3.1-pro-low",
+    "agy/gemini-3.1-flash-lite",
+    "agy/gemini-3.1-pro-high",
+    "glm/glm-5.2-max",
+    "glm/glm-4.5",
+    "glm/glm-4.5-air",
+    "glm/glm-5-turbo",
+    "agy/gemini-3.7-flash-tiered",
+    "agy/gemini-3.1-flash-image",
+    "agy/gemini-3.6-flash-low",
+    "glm/glm-5.2-high",
+    "glm/glm-4.6",
+    "agy/gemini-3-flash",
+    "agy/gemini-3.5-flash-lite",
+    "agy/gemini-pro-agent",
+    "glm/glm-5.3-max",
+    "glm/glm-5.2",
+    "glm/glm-5",
+    "glm/glm-5.1",
+    "glm/glm-5.3-flash",
+    "agy/gemini-3.7-flash-medium",
+    "agy/gemini-3.7-flash-low",
+    "glm/glm-5.3-high",
+    "glm/glm-5.3-low",
+    "agy/gemini-3.6-flash-tiered",
+    "xai-oauth/grok-4.20-0309-non-reasoning",
+    "agy/gemini-3.7-flash-high",
+    "agy/gemini-3.8-flash-tiered",
+    "glm/glm-5.3",
+    "xai-oauth/grok-4.20-0309-reasoning"
+  ]
+}

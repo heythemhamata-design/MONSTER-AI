@@ -1,0 +1,283 @@
+{
+  "working": [
+    {
+      "model": "pol/grok-4.6",
+      "status": "working",
+      "reason": "ok",
+      "time": 9.423797130584717
+    },
+    {
+      "model": "pol/gpt-oss",
+      "status": "working",
+      "reason": "ok",
+      "time": 4.449203252792358
+    },
+    {
+      "model": "pol/kimi-k3",
+      "status": "working",
+      "reason": "ok",
+      "time": 7.759327173233032
+    },
+    {
+      "model": "pol/deepseek-pro",
+      "status": "working",
+      "reason": "ok",
+      "time": 5.470961332321167
+    },
+    {
+      "model": "pol/gpt-5.6-luna",
+      "status": "working",
+      "reason": "ok",
+      "time": 5.971361875534058
+    },
+    {
+      "model": "pol/glm-5.3",
+      "status": "working",
+      "reason": "ok",
+      "time": 7.708433389663696
+    },
+    {
+      "model": "pol/llama",
+      "status": "working",
+      "reason": "ok",
+      "time": 3.1729044914245605
+    },
+    {
+      "model": "pol/command-a-plus",
+      "status": "working",
+      "reason": "ok",
+      "time": 5.443828344345093
+    },
+    {
+      "model": "gh/gpt-5.6-luna",
+      "status": "working",
+      "reason": "ok",
+      "time": 3.2393949031829834
+    },
+    {
+      "model": "gh/gpt-5.6-sol",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.9916553497314453
+    },
+    {
+      "model": "gh/claude-sonnet-5",
+      "status": "working",
+      "reason": "ok",
+      "time": 3.5858511924743652
+    },
+    {
+      "model": "gh/claude-opus-4.8",
+      "status": "working",
+      "reason": "ok",
+      "time": 3.827908992767334
+    },
+    {
+      "model": "gh/gemini-3.7-flash",
+      "status": "working",
+      "reason": "ok",
+      "time": 3.0671095848083496
+    },
+    {
+      "model": "gh/kimi-k3",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.979811191558838
+    },
+    {
+      "model": "oc/claude-sonnet-5",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.3814117908477783
+    },
+    {
+      "model": "oc/gpt-5.6-luna",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.3633065223693848
+    },
+    {
+      "model": "oc/gpt-5.6-sol",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.353907823562622
+    },
+    {
+      "model": "oc/gemini-3.7-flash",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.356837272644043
+    },
+    {
+      "model": "oc/kimi-k3",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.3526387214660645
+    },
+    {
+      "model": "oc/deepseek-v4-flash-free",
+      "status": "working",
+      "reason": "ok",
+      "time": 14.18531060218811
+    },
+    {
+      "model": "xai-oauth/grok-4.5",
+      "status": "working",
+      "reason": "ok",
+      "time": 2.8812694549560547
+    },
+    {
+      "model": "glm/glm-5.3",
+      "status": "working",
+      "reason": "ok",
+      "time": 20.543243885040283
+    },
+    {
+      "model": "glm/glm-5.3-flash",
+      "status": "working",
+      "reason": "ok",
+      "time": 16.50645351409912
+    },
+    {
+      "model": "glm/glm-5.2",
+      "status": "working",
+      "reason": "ok",
+      "time": 17.218703031539917
+    }
+  ],
+  "fallback": [
+    {
+      "model": "pol/claude",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.044159889221191
+    },
+    {
+      "model": "pol/gemini",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.4991605281829834
+    },
+    {
+      "model": "pol/mistral",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 5.944739580154419
+    },
+    {
+      "model": "pol/qwen-coder-large",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.540076017379761
+    },
+    {
+      "model": "pol/qwen3-coder-480b",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.041893720626831
+    },
+    {
+      "model": "pol/kimi-k2.7-code",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.393216609954834
+    },
+    {
+      "model": "gh/grok-4.6",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.7861993312835693
+    },
+    {
+      "model": "gh/o3-mini",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.3431384563446045
+    },
+    {
+      "model": "gh/o4-mini",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.4609861373901367
+    },
+    {
+      "model": "kc/claude-sonnet-5",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.850618600845337
+    },
+    {
+      "model": "kc/claude-opus-4.8",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.22975492477417
+    },
+    {
+      "model": "kc/gpt-5.6-luna",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.6103785037994385
+    },
+    {
+      "model": "kc/gpt-5.6-sol",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 6.941410064697266
+    },
+    {
+      "model": "kc/gemini-3.7-flash",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.679670333862305
+    },
+    {
+      "model": "kc/kimi-k3",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.513416290283203
+    },
+    {
+      "model": "kc/deepseek-v4-pro",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.8126678466796875
+    },
+    {
+      "model": "kc/qwen3.6-plus",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.2959372997283936
+    },
+    {
+      "model": "oc/claude-opus-4.8",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.5709521770477295
+    },
+    {
+      "model": "xai-oauth/grok-4.6",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.663883924484253
+    },
+    {
+      "model": "xai-oauth/grok-4.6-high",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.866445541381836
+    },
+    {
+      "model": "ds/deepseek-v4-pro",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 3.5600385665893555
+    },
+    {
+      "model": "ds/deepseek-v4-flash",
+      "status": "fallback",
+      "reason": "fallback triggered",
+      "time": 4.4088287353515625
+    }
+  ],
+  "broken": []
+}

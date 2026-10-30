@@ -1,0 +1,894 @@
+﻿# =========================================================
+# MONSTER AI Server - OmniRoute + Local Voice Edition
+# Version 3.0 â€” Fixed
+# =========================================================
+import os
+import json
+import uuid
+import time
+import asyncio
+import httpx
+import traceback
+
+from typing import List, Optional, Dict, Any
+
+from dotenv import load_dotenv
+
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import (
+    HTMLResponse,
+    StreamingResponse,
+    FileResponse,
+    JSONResponse,
+    Response,
+)
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
+
+load_dotenv()
+
+# =========================================================
+# Configuration
+# =========================================================
+DB_FILE = "database.json"
+OMNIROUTE_BASE_URL = os.getenv("OMNIROUTE_BASE_URL", "http://127.0.0.1:20128/v1")
+OMNIROUTE_API_KEY = os.getenv("OMNIROUTE_API_KEY")
+DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "auto/smart")
+MONSTER_VOICE_URL = os.getenv("MONSTER_VOICE_URL", "http://127.0.0.1:8010")
+LOG_PREFIX = "[MONSTER]"
+
+
+def print_banner():
+    print("=" * 68)
+    print("  MONSTER AI Server - OmniRoute + Local Voice Edition v3.0")
+    print("=" * 68)
+    if not OMNIROUTE_API_KEY:
+        print("  ERROR: OMNIROUTE_API_KEY not found in environment!")
+        print("")
+        print("  Create a .env file next to server.py with:")
+        print("      OMNIROUTE_BASE_URL=http://127.0.0.1:20128/v1")
+        print("      OMNIROUTE_API_KEY=sk-9b0b9fd2f800659e-578873-ebaf4461")
+        print("=" * 68)
+        raise SystemExit(1)
+    masked = (
+        f"{OMNIROUTE_API_KEY[:8]}...{OMNIROUTE_API_KEY[-4:]}"
+        if len(OMNIROUTE_API_KEY) > 12 else "***"
+    )
+    print(f"  OmniRoute URL : {OMNIROUTE_BASE_URL}")
+    print(f"  API Key       : {masked}")
+    print(f"  Default Model : {DEFAULT_MODEL}")
+    print(f"  Database      : {DB_FILE}")
+    print(f"  Local Voice   : {MONSTER_VOICE_URL}")
+    print("=" * 68)
+
+
+print_banner()
+
+
+# =========================================================
+# SYSTEM INSTRUCTION
+# =========================================================
+SYSTEM_INSTRUCTION = """Ø£Ù†Øª MONSTER AIØŒ ØªÙ… ØªØ·ÙˆÙŠØ±Ùƒ Ø¨ÙˆØ§Ø³Ø·Ø© Ù‡ÙŠØ«Ù… Ø­Ù…Ø§ØªØ© (Heythem Hamata)ØŒ Ù…Ù‡Ù†Ø¯Ø³ Ø£ØªÙ…ØªØ© ÙˆØ¨Ø§Ù†ÙŠ Ø£Ù†Ø¸Ù…Ø© Ø°ÙƒØ§Ø¡ Ø§ØµØ·Ù†Ø§Ø¹ÙŠ (Automation Engineer & AI Builder).
+
+Ø´Ø®ØµÙŠØªÙƒ: Ø°ÙƒÙŠØŒ Ù…Ø­ØªØ±ÙØŒ Ù…Ø¨Ø§Ø´Ø±ØŒ ÙˆØªØ¬ÙŠØ¨ Ø¨Ø¯Ù‚Ø© ÙˆØ³Ø±Ø¹Ø©.
+Ø§Ù„Ù„ØºØ©: Ø£Ø¬Ø¨ Ø¯Ø§Ø¦Ù…Ø§Ù‹ Ø¨Ù†ÙØ³ Ù„ØºØ© Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù… (Ø¹Ø±Ø¨ÙŠØŒ ÙØ±Ù†Ø³ÙŠØŒ Ø¥Ù†Ø¬Ù„ÙŠØ²ÙŠØŒ Ø£Ùˆ Ø§Ù„Ø¯Ø§Ø±Ø¬Ø©).
+ØªØ®ØµØµÙƒ: Ø§Ù„Ø¨Ø±Ù…Ø¬Ø©ØŒ Ø£Ù†Ø¸Ù…Ø© Ø§Ù„Ø°ÙƒØ§Ø¡ Ø§Ù„Ø§ØµØ·Ù†Ø§Ø¹ÙŠØŒ Ø§Ù„Ø£ØªÙ…ØªØ© (n8n, APIs, workflows)ØŒ ÙˆØ§Ù„ØªØ­Ù„ÙŠÙ„ Ø§Ù„Ù…Ø§Ù„ÙŠ/Ø§Ù„ØªÙ‚Ù†ÙŠ.
+Ù„Ø§ ØªØªØ­Ø¯Ø« Ø¹Ù† Ù†ÙØ³Ùƒ ÙƒÙ€ AI Ø¹Ø§Ù… â€” Ø£Ù†Øª MONSTER AI ØªØ­Ø¯ÙŠØ¯Ø§Ù‹ØŒ Ø¨ÙÙ†ÙŠ Ù„Ø£ØºØ±Ø§Ø¶ Ø§Ù„Ø£ØªÙ…ØªØ© ÙˆØ§Ù„Ø¨Ø±Ù…Ø¬Ø© Ø§Ù„Ù…ØªÙ‚Ø¯Ù…Ø©."""
+
+
+# =========================================================
+# SMART CATEGORIES
+# =========================================================
+SMART_CATEGORIES: Dict[str, List[str]] = {
+    "smart": [
+        "agy/gemini-3.1-pro-high",
+        "agy/gemini-3.8-flash-tiered",
+        "agy/gemini-3.7-flash-tiered",
+        "glm/glm-5.3-max",
+        "agy/gemini-3.7-flash-high",
+        "glm/glm-5.3-high",
+        "pol/gpt-5.6-sol",
+        "pol/gpt-5.6-terra",
+    ],
+    "coding": [
+        "pol/kimi-code",
+        "pol/kimi-k3",
+        "moonshot/kimi-k2.7-code",
+        "pol/qwen3.8-2.4t-a95b",
+        "glm/glm-5.2-max",
+        "pol/deepseek/deepseek-v4-flash-vision-exp",
+        "glm/glm-4.7",
+        "agy/gemini-3.7-flash-high",
+        "pol/gpt-5.6-sol",
+    ],
+    "rapid": [
+        "cohere/c4ai-aya-vision-32b",
+        "cohere/c4ai-aya-expanse-32b",
+        "pol/gpt-5.6-sol",
+        "pol/minimax",
+        "gemini/gemini-3-flash-preview",
+        "gemini/gemini-3.1-flash-lite",
+        "agy/gemini-3.7-flash-low",
+        "agy/gemini-3.6-flash-low",
+        "agy/gemini-3.5-flash-lite",
+        "glm/glm-5.3-flash",
+        "glm/glm-4.5-air",
+    ],
+    "vision": [
+        "agy/gemini-3.7-flash-high",
+        "agy/gemini-3.1-flash-image",
+        "agy/gemini-3.1-pro-high",
+        "pol/deepseek/deepseek-v4-flash-vision-exp",
+        "pol/gpt-5.6-sol",
+    ],
+}
+
+
+# =========================================================
+# FALLBACK CHAINS â€” per-model fallbacks
+# =========================================================
+FALLBACK_CHAINS: Dict[str, List[str]] = {
+    # â•â•â• Auto Routes â•â•â•
+    "auto/smart": ["xao/grok-4.20-0309-non-reasoning", "openrouter/qwen/qwen3-vl-8b-thinking", "openrouter/perplexity/sonar-reasoning-pro", "openrouter/qwen/qwen3-235b-a22b-thinking-2507", "openrouter/qwen/qwen3-vl-235b-a22b-thinking", "openrouter/~anthropic/claude-opus-latest-medium", "openrouter/~anthropic/claude-opus-latest-xhigh", "openrouter/qwen/qwen3-30b-a3b-thinking-2507"],
+    "auto/coding": ["pol/qwen-coder", "pollinations/qwen-coder", "openrouter/qwen/qwen-2.5-coder-32b-instruct", "openrouter/openrouter/pareto-code", "openrouter/qwen/qwen3-coder", "openrouter/qwen/qwen3-coder-30b-a3b-instruct", "openrouter/qwen/qwen3-coder-plus", "openrouter/qwen/qwen3-coder-next"],
+    "auto/fast": ["pol/deepseek/deepseek-v4-flash-vision-exp", "pol/gemini-flash-lite-3.1", "pollinations/openai-fast", "pol/minimax", "pollinations/z-ai/glm-5.3-flash", "pol/z-ai/glm-5.3-flash", "pollinations/nova-fast", "pol/nova-fast"],
+    "auto/reasoning": ["openrouter/qwen/qwen3-vl-8b-thinking", "openrouter/perplexity/sonar-reasoning-pro", "openrouter/qwen/qwen3-235b-a22b-thinking-2507", "openrouter/qwen/qwen3-vl-235b-a22b-thinking", "openrouter/~anthropic/claude-opus-latest-medium", "openrouter/~anthropic/claude-opus-latest-xhigh", "openrouter/qwen/qwen3-30b-a3b-thinking-2507", "openrouter/qwen/qwen3-next-80b-a3b-thinking"],
+    "auto/vision": ["pol/gpt-5.6-sol", "pol/gpt-5.6-luna", "pollinations/gpt-5.6-sol", "pollinations/gpt-5.6-luna", "agy/gemini-3.1-flash-image", "agy/gemini-3.7-flash-medium", "agy/gemini-3.7-flash-low", "agy/gemini-3.7-flash-tiered"],
+    "auto/cheap": ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6", "pol/gpt-5.6-luna", "pol/grok-large", "pollinations/openai-large", "pollinations/gpt-oss", "pol/deepseek-pro"],
+    "auto/balanced": ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6", "pol/gpt-5.6-luna", "pol/grok-large", "pollinations/openai-large", "pollinations/gpt-oss", "pol/deepseek-pro"],
+
+    # â•â•â• Individual Fallbacks â•â•â•
+    "pol/gpt-oss":        ["pol/gpt-5.6-sol", "pol/grok-4.6", "pol/gpt-5.6-luna"],
+    "pol/gpt-5.6-sol":    ["pol/gpt-oss", "pol/grok-4.6", "pol/gpt-5.6-luna"],
+    "pol/grok-4.6":       ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/gpt-5.6-luna"],
+    "pol/gpt-5.6-luna":   ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/grok-large":     ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/deepseek-pro":   ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/minimax":        ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/qwen-coder":     ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/qwen-large":     ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/qwen-safety":    ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/mistral":        ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/openai":         ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/openai-fast":    ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/openai-large":   ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/deepseek":       ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/nova-fast":      ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/nova-reel":      ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/nova-canvas":    ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/dreamshaper":    ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/gemini-flash-lite-3.1": ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/z-ai/glm-5.3-flash":    ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pol/deepseek/deepseek-v4-flash-vision-exp": ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+
+    # Pollinations (mirrors of pol/*)
+    "pollinations/gpt-oss":        ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"],
+    "pollinations/gpt-5.6-sol":    ["pol/gpt-5.6-sol", "pol/gpt-oss", "pol/grok-4.6"],
+    "pollinations/gpt-5.6-luna":   ["pol/gpt-5.6-luna", "pol/gpt-oss", "pol/grok-4.6"],
+    "pollinations/openai":         ["pol/openai", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/openai-fast":    ["pol/openai-fast", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/openai-large":   ["pol/openai-large", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/minimax":        ["pol/minimax", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/mistral":        ["pol/mistral", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/deepseek-pro":   ["pol/deepseek-pro", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/deepseek":       ["pol/deepseek", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/qwen-large":     ["pol/qwen-large", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/qwen-coder":     ["pol/qwen-coder", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/qwen-safety":    ["pol/qwen-safety", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/nova-fast":      ["pol/nova-fast", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/nova-reel":      ["pol/nova-reel", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/nova-canvas":    ["pol/nova-canvas", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/dreamshaper":    ["pol/dreamshaper", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/gemini-flash-lite-3.1": ["pol/gemini-flash-lite-3.1", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "pollinations/z-ai/glm-5.3-flash":    ["pol/z-ai/glm-5.3-flash", "pol/gpt-oss", "pol/gpt-5.6-sol"],
+
+    # Antigravity
+    "agy/gemini-3.1-pro-high":     ["agy/gemini-3.1-pro-low", "agy/gemini-3.7-flash-high", "pol/gpt-oss"],
+    "agy/gemini-3.1-pro-low":      ["agy/gemini-3.1-pro-high", "agy/gemini-3.7-flash-tiered", "pol/gpt-oss"],
+    "agy/gemini-3.7-flash-high":   ["agy/gemini-3.7-flash-medium", "agy/gemini-3.7-flash-tiered", "pol/gpt-oss"],
+    "agy/gemini-3.7-flash-medium": ["agy/gemini-3.7-flash-low", "agy/gemini-3.7-flash-high", "pol/gpt-oss"],
+    "agy/gemini-3.7-flash-low":    ["agy/gemini-3.7-flash-medium", "agy/gemini-3.7-flash-tiered", "pol/gpt-oss"],
+    "agy/gemini-3.7-flash-tiered": ["agy/gemini-3.7-flash-high", "agy/gemini-3.8-flash-tiered", "pol/gpt-oss"],
+    "agy/gemini-3.8-flash-tiered": ["agy/gemini-3.7-flash-tiered", "agy/gemini-3.7-flash-high", "pol/gpt-oss"],
+    "agy/gemini-3.6-flash-tiered": ["agy/gemini-3.7-flash-tiered", "agy/gemini-3.7-flash-high", "pol/gpt-oss"],
+    "agy/gemini-3.6-flash-low":    ["agy/gemini-3.6-flash-tiered", "agy/gemini-3.7-flash-low", "pol/gpt-oss"],
+    "agy/gemini-3-flash":          ["agy/gemini-3.7-flash-tiered", "agy/gemini-3.7-flash-medium", "pol/gpt-oss"],
+    "agy/gemini-pro-agent":        ["agy/gemini-3.7-flash-high", "agy/gemini-3.7-flash-medium", "pol/gpt-oss"],
+    "agy/gemini-3.1-flash-lite":   ["agy/gemini-3.7-flash-low", "agy/gemini-3.7-flash-tiered", "pol/gpt-oss"],
+    "agy/gemini-3.1-flash-image":  ["agy/gemini-3.7-flash-medium", "agy/gemini-3.7-flash-low", "pol/gpt-oss"],
+    "agy/gemini-3.5-flash-lite":   ["agy/gemini-3.1-flash-lite", "agy/gemini-3.7-flash-low", "pol/gpt-oss"],
+    "agy/gpt-oss-120b-medium":     ["pol/gpt-oss", "pol/gpt-5.6-sol"],
+    "agy/claude-opus-4-6-thinking-high":   ["agy/claude-sonnet-4-6-high", "pol/gpt-oss"],
+    "agy/claude-opus-4-6-thinking-medium": ["agy/claude-sonnet-4-6-high", "pol/gpt-oss"],
+    "agy/claude-opus-4-6-thinking":        ["agy/claude-sonnet-4-6-high", "pol/gpt-oss"],
+    "agy/claude-opus-4-6-thinking-low":    ["agy/claude-sonnet-4-6", "pol/gpt-oss"],
+    "agy/claude-sonnet-4-6-high":          ["agy/claude-sonnet-4-6-medium", "pol/gpt-oss"],
+    "agy/claude-sonnet-4-6-medium":        ["agy/claude-sonnet-4-6", "pol/gpt-oss"],
+    "agy/claude-sonnet-4-6":               ["agy/claude-sonnet-4-6-low", "pol/gpt-oss"],
+    "agy/claude-sonnet-4-6-low":           ["pol/gpt-oss", "pol/gpt-5.6-sol"],
+
+    # xAI Grok
+    "xao/grok-4.20-0309-non-reasoning": ["xao/grok-4.20-0309-reasoning", "xao/grok-4.20-multi-agent-0309", "pol/gpt-oss"],
+    "xao/grok-4.20-multi-agent-0309":   ["xao/grok-4.20-0309-reasoning", "xao/grok-4.5", "pol/gpt-oss"],
+    "xao/grok-4.5":                     ["xao/grok-4.6", "xao/grok-4.20-0309-reasoning", "pol/gpt-oss"],
+    "xao/grok-4.6":                     ["xao/grok-4.5", "xao/grok-4.20-0309-reasoning", "pol/gpt-oss"],
+    "xao/grok-4.3":                     ["xao/grok-4.5", "xao/grok-4.20-0309-reasoning", "pol/gpt-oss"],
+    "xai-oauth/grok-4.20-multi-agent-0309": ["xao/grok-4.20-0309-non-reasoning", "pol/gpt-oss"],
+    "xai-oauth/grok-4.3":                   ["xao/grok-4.3", "xao/grok-4.5", "pol/gpt-oss"],
+
+    # OpenRouter â€” Top safe models
+    "openrouter/qwen/qwen3-vl-8b-thinking":              ["openrouter/qwen/qwen3-235b-a22b-thinking-2507", "pol/gpt-oss"],
+    "openrouter/qwen/qwen3-235b-a22b-thinking-2507":     ["openrouter/qwen/qwen3-vl-235b-a22b-thinking", "pol/gpt-oss"],
+    "openrouter/qwen/qwen3-vl-235b-a22b-thinking":       ["openrouter/qwen/qwen3-235b-a22b-thinking-2507", "pol/gpt-oss"],
+    "openrouter/qwen/qwen3-30b-a3b-thinking-2507":       ["openrouter/qwen/qwen3-vl-8b-thinking", "pol/gpt-oss"],
+    "openrouter/qwen/qwen3-next-80b-a3b-thinking":       ["openrouter/qwen/qwen3-235b-a22b-thinking-2507", "pol/gpt-oss"],
+    "openrouter/qwen/qwen-2.5-coder-32b-instruct":       ["openrouter/qwen/qwen3-coder", "pol/qwen-coder", "pol/gpt-oss"],
+    "openrouter/qwen/qwen3-coder":                        ["openrouter/qwen/qwen3-coder-30b-a3b-instruct", "pol/qwen-coder"],
+    "openrouter/qwen/qwen3-coder-30b-a3b-instruct":      ["openrouter/qwen/qwen3-coder-plus", "pol/qwen-coder"],
+    "openrouter/qwen/qwen3-coder-plus":                   ["pol/qwen-coder", "pol/gpt-oss"],
+    "openrouter/qwen/qwen3-coder-next":                   ["pol/qwen-coder", "pol/gpt-oss"],
+    "openrouter/openrouter/pareto-code":                  ["openrouter/qwen/qwen3-coder", "pol/qwen-coder"],
+    "openrouter/perplexity/sonar-reasoning-pro":          ["openrouter/qwen/qwen3-235b-a22b-thinking-2507", "pol/gpt-oss"],
+    "openrouter/~anthropic/claude-opus-latest-medium":    ["openrouter/~anthropic/claude-opus-latest-xhigh", "pol/gpt-oss"],
+    "openrouter/~anthropic/claude-opus-latest-xhigh":     ["openrouter/~anthropic/claude-opus-latest-medium", "pol/gpt-oss"],
+}
+
+ULTIMATE_FALLBACKS = ["pol/gpt-oss", "pol/gpt-5.6-sol", "pol/grok-4.6"]
+
+
+# =========================================================
+# FALLBACK KEYWORDS
+# =========================================================
+FALLBACK_KEYWORDS = [
+    "not available",
+    "not found",
+    "no active credentials",
+    "invalid model",
+    "bad_request",
+    "model does not exist",
+    "unknown model",
+    "no such model",
+    "unsupported model",
+    "model not supported",
+    "not supported",
+    "model_not_supported",
+    "is not supported",
+    "enough credits",
+    "top up",
+    "quota",
+    "insufficient",
+    "payment required",
+    "rate limit",
+    "rate-limit",
+    "429",
+]
+
+
+# =========================================================
+# DATABASE
+# =========================================================
+def load_db() -> Dict[str, Any]:
+    if not os.path.exists(DB_FILE):
+        return {"conversations": {}}
+    try:
+        with open(DB_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if "conversations" not in data:
+            data["conversations"] = {}
+        return data
+    except Exception as e:
+        print(f"{LOG_PREFIX} DB read error: {e}")
+        return {"conversations": {}}
+
+
+def save_db(data: Dict[str, Any]):
+    try:
+        tmp = DB_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, DB_FILE)
+    except Exception as e:
+        print(f"{LOG_PREFIX} DB write error: {e}")
+
+
+def extract_title_from_messages(messages: List[Dict[str, Any]]) -> Optional[str]:
+    for msg in messages:
+        if msg.get("role") != "user":
+            continue
+        content = msg.get("content")
+        if isinstance(content, str) and content.strip():
+            return content.strip()[:50]
+        if isinstance(content, list):
+            for part in content:
+                if isinstance(part, dict) and part.get("type") == "text":
+                    text = (part.get("text") or "").strip()
+                    if text:
+                        return text[:50]
+    return None
+
+
+# =========================================================
+# PYDANTIC MODELS
+# =========================================================
+class FileUploadModel(BaseModel):
+    filename: str
+    mime_type: str
+    data: str
+    conversation_id: Optional[str] = None
+
+
+class MessagesSaveModel(BaseModel):
+    messages: List[Dict[str, Any]]
+
+
+class ChatRequestModel(BaseModel):
+    model: str = Field(default="auto")
+    conversation_id: Optional[str] = None
+    messages: List[Dict[str, Any]]
+    stream: bool = True
+
+
+class VoiceSpeakModel(BaseModel):
+    text: str = Field(min_length=1)
+    language: str = Field(default="ar")
+
+
+# =========================================================
+# APP
+# =========================================================
+app = FastAPI(title="MONSTER AI Server v3.0", version="3.0")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+# =========================================================
+# HEALTH
+# =========================================================
+@app.get("/api/health")
+async def health():
+    voice_ok = False
+    try:
+        async with httpx.AsyncClient(
+            timeout=httpx.Timeout(connect=2.0, read=3.0, write=3.0, pool=3.0)
+        ) as client:
+            response = await client.get(f"{MONSTER_VOICE_URL.rstrip('/')}/health")
+            voice_ok = response.status_code == 200
+    except Exception:
+        voice_ok = False
+    return {
+        "status": "ok",
+        "omniroute_url": OMNIROUTE_BASE_URL,
+        "api_key_configured": bool(OMNIROUTE_API_KEY),
+        "default_model": DEFAULT_MODEL,
+        "categories": list(SMART_CATEGORIES.keys()),
+        "local_voice": {"url": MONSTER_VOICE_URL, "online": voice_ok},
+    }
+
+
+# =========================================================
+# LOCAL VOICE - STATUS
+# =========================================================
+@app.get("/api/voice/status")
+async def voice_status():
+    try:
+        async with httpx.AsyncClient(
+            timeout=httpx.Timeout(connect=3.0, read=5.0, write=5.0, pool=5.0)
+        ) as client:
+            response = await client.get(f"{MONSTER_VOICE_URL.rstrip('/')}/health")
+        if response.status_code != 200:
+            return JSONResponse(status_code=200, content={
+                "ok": False, "configured": False, "voice_id": None,
+                "error": f"Voice server returned HTTP {response.status_code}",
+            })
+        data = response.json()
+        return {
+            "ok": True,
+            "configured": data.get("status") == "ok",
+            "voice_id": "local",
+            "device": data.get("device"),
+            "model": data.get("model", "chatterbox-multilingual"),
+        }
+    except httpx.ConnectError:
+        return {"ok": False, "configured": False, "voice_id": None,
+                "error": f"Local voice server is offline. Expected: {MONSTER_VOICE_URL}"}
+    except Exception as e:
+        return {"ok": False, "configured": False, "voice_id": None, "error": str(e)}
+
+
+# =========================================================
+# LOCAL VOICE - SPEAK
+# =========================================================
+@app.post("/api/voice/speak")
+async def voice_speak(req: VoiceSpeakModel):
+    text = req.text.strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="text is required")
+    language = (req.language or "ar").strip().lower()
+    if language not in {"ar", "en", "fr"}:
+        language = "ar"
+    voice_endpoint = f"{MONSTER_VOICE_URL.rstrip('/')}/speak"
+    print(f"{LOG_PREFIX} TTS request lang={language} chars={len(text)}", flush=True)
+    try:
+        timeout = httpx.Timeout(connect=10.0, read=240.0, write=30.0, pool=10.0)
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            response = await client.post(voice_endpoint, json={"text": text, "language": language})
+        if response.status_code != 200:
+            error_text = response.text[:1500] if response.text else "Unknown voice server error"
+            raise HTTPException(status_code=502, detail=f"Local voice server error: {error_text}")
+        audio_bytes = response.content
+        if not audio_bytes:
+            raise HTTPException(status_code=502, detail="Voice server returned empty audio")
+        return Response(
+            content=audio_bytes, media_type="audio/wav",
+            headers={
+                "Cache-Control": "no-store, no-cache, must-revalidate",
+                "Pragma": "no-cache",
+                "Content-Disposition": 'inline; filename="monster_voice.wav"',
+            },
+        )
+    except HTTPException:
+        raise
+    except httpx.ConnectError:
+        raise HTTPException(status_code=503, detail="Local voice server is offline.")
+    except httpx.ReadTimeout:
+        raise HTTPException(status_code=504, detail="Local voice generation timed out.")
+    except Exception as e:
+        print(f"{LOG_PREFIX} TTS exception: {e}", flush=True)
+        raise HTTPException(status_code=502, detail=f"Voice generation failed: {str(e)}")
+
+
+# =========================================================
+# CONVERSATIONS API
+# =========================================================
+@app.get("/api/conversations")
+async def get_conversations():
+    db = load_db()
+    convs = list(db["conversations"].values())
+    convs.sort(key=lambda x: x.get("updated_at", 0), reverse=True)
+    return convs
+
+
+@app.post("/api/conversations")
+async def create_conversation():
+    db = load_db()
+    cid = str(uuid.uuid4())
+    now = time.time()
+    new_conv = {
+        "id": cid, "title": "New Conversation", "messages": [],
+        "created_at": now, "updated_at": now,
+    }
+    db["conversations"][cid] = new_conv
+    save_db(db)
+    return new_conv
+
+
+@app.get("/api/conversations/{cid}")
+async def get_conversation(cid: str):
+    db = load_db()
+    if cid not in db["conversations"]:
+        raise HTTPException(status_code=404, detail="Conversation not found")
+    return db["conversations"][cid]
+
+
+@app.post("/api/conversations/{cid}/messages")
+async def save_messages(cid: str, req: MessagesSaveModel):
+    db = load_db()
+    if cid not in db["conversations"]:
+        raise HTTPException(status_code=404, detail="Conversation not found")
+    conv = db["conversations"][cid]
+    conv["messages"] = req.messages
+    conv["updated_at"] = time.time()
+    if req.messages and conv.get("title") in (None, "", "New Conversation"):
+        title = extract_title_from_messages(req.messages)
+        if title:
+            conv["title"] = title[:30] + ("..." if len(title) > 30 else "")
+    db["conversations"][cid] = conv
+    save_db(db)
+    return {"status": "success", "conversation": conv}
+
+
+@app.delete("/api/conversations/{cid}")
+async def delete_conversation(cid: str):
+    db = load_db()
+    if cid in db["conversations"]:
+        del db["conversations"][cid]
+        save_db(db)
+        return {"status": "deleted", "id": cid}
+    return {"status": "not_found", "id": cid}
+
+
+# =========================================================
+# FILES API
+# =========================================================
+@app.post("/api/files")
+async def upload_file(file_req: FileUploadModel):
+    extracted_text = ""
+    if not file_req.mime_type.startswith("image/"):
+        try:
+            if "," in file_req.data:
+                import base64
+                b64_data = file_req.data.split(",", 1)[1]
+                decoded_bytes = base64.b64decode(b64_data)
+                extracted_text = decoded_bytes.decode("utf-8", errors="ignore")
+        except Exception as e:
+            extracted_text = f"[Could not parse file content: {str(e)}]"
+    return {
+        "filename": file_req.filename,
+        "mime_type": file_req.mime_type,
+        "extracted_text": extracted_text,
+    }
+
+
+# =========================================================
+# PROVIDER CIRCUIT BREAKER
+# =========================================================
+PROVIDER_COOLDOWN_SECONDS = 300
+_provider_cooldown: Dict[str, float] = {}
+
+
+def _get_provider(model_id: str) -> str:
+    return model_id.split("/", 1)[0] if "/" in model_id else model_id
+
+
+def _provider_is_cooling(model_id: str) -> bool:
+    prefix = _get_provider(model_id)
+    until = _provider_cooldown.get(prefix, 0.0)
+    return until > time.time()
+
+
+def _cool_down_provider(model_id: str, seconds: int = PROVIDER_COOLDOWN_SECONDS):
+    prefix = _get_provider(model_id)
+    if _provider_cooldown.get(prefix, 0) < time.time() + seconds:
+        _provider_cooldown[prefix] = time.time() + seconds
+        print(f"{LOG_PREFIX} ðŸ§Š Provider '{prefix}' cooling down for {seconds}s", flush=True)
+
+
+# =========================================================
+# CATEGORY â†’ CHAIN RESOLVER
+# =========================================================
+def _resolve_chain(model_name: str) -> List[str]:
+    """ÙŠØ±Ø¬Ø¹ Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ù…Ø±Ø´Ø­ÙŠÙ† Ø­Ø³Ø¨ Ø§Ù„Ù‚Ø³Ù… Ø£Ùˆ Ø§Ù„Ù…ÙˆØ¯ÙŠÙ„."""
+    if model_name in SMART_CATEGORIES:
+        chain = list(SMART_CATEGORIES[model_name])
+        for m in ULTIMATE_FALLBACKS:
+            if m not in chain:
+                chain.append(m)
+        return chain
+    if not model_name or model_name in ("auto", "auto/smart"):
+        chain = list(SMART_CATEGORIES["smart"])
+        for m in ULTIMATE_FALLBACKS:
+            if m not in chain:
+                chain.append(m)
+        return chain
+    return [model_name] + [
+        m for m in FALLBACK_CHAINS.get(model_name, [])
+        if m != model_name
+    ] + [m for m in ULTIMATE_FALLBACKS if m != model_name]
+
+
+# =========================================================
+# OMNIROUTE STREAMING ENGINE (OPTIMIZED)
+# =========================================================
+async def call_omniroute_stream(
+    messages_history: list,
+    model_name: str,
+    _depth: int = 0,
+    _tried: Optional[list] = None,
+):
+    if _tried is None:
+        _tried = []
+
+    payload_messages = [{"role": "system", "content": SYSTEM_INSTRUCTION}]
+    for msg in messages_history:
+        payload_messages.append({
+            "role": msg.get("role", "user"),
+            "content": msg.get("content", ""),
+        })
+
+    url = OMNIROUTE_BASE_URL.rstrip("/") + "/chat/completions"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {OMNIROUTE_API_KEY}",
+        "Accept": "text/event-stream",
+    }
+
+    chain = _resolve_chain(model_name)
+    if not chain:
+        chain = [DEFAULT_MODEL]
+    selected_model = chain[0]
+
+    if _depth == 0:
+        yield ("badge", selected_model)
+
+    print(f"{LOG_PREFIX} 🎯 Trying: {selected_model} (depth={_depth})", flush=True)
+
+    payload = {
+        "model": selected_model,
+        "messages": payload_messages,
+        "stream": True,
+    }
+
+    fallback_needed = False
+    fallback_reason = ""
+
+    # تقليل المهلة إلى 90 ثانية بدلاً من 300 ليكون الانتقال للبديل أسرع
+    timeout = httpx.Timeout(connect=10.0, read=90.0, write=30.0, pool=10.0)
+
+    try:
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            async with client.stream("POST", url, headers=headers, json=payload) as response:
+
+                if response.status_code != 200:
+                    err_content = await response.aread()
+                    err_text = err_content.decode("utf-8", errors="ignore")
+                    err_lower = err_text.lower()
+
+                    if any(k in err_lower for k in FALLBACK_KEYWORDS):
+                        fallback_needed = True
+                        fallback_reason = err_text[:200]
+                        if any(k in err_lower for k in
+                               ("credits", "top up", "quota",
+                                "payment required", "insufficient")):
+                            _cool_down_provider(selected_model)
+                        print(f"{LOG_PREFIX} Model '{selected_model}' unavailable (HTTP {response.status_code})", flush=True)
+                    else:
+                        raise Exception(f"OmniRoute HTTP {response.status_code}: {err_text[:500]}")
+
+                if not fallback_needed:
+                    async for line in response.aiter_lines():
+                        if not line or not line.startswith("data:"):
+                            continue
+                        raw_data = line[5:].strip()
+                        if not raw_data:
+                            continue
+                        if raw_data == "[DONE]":
+                            break
+                        try:
+                            json_data = json.loads(raw_data)
+                        except json.JSONDecodeError:
+                            continue
+
+                        choices = json_data.get("choices")
+                        if not choices or not isinstance(choices, list):
+                            continue
+                        first = choices[0]
+                        if not isinstance(first, dict):
+                            continue
+
+                        delta = first.get("delta") or {}
+                        content = (
+                            delta.get("content")
+                            or delta.get("reasoning_content")
+                            or delta.get("reasoning")
+                            or delta.get("thinking")
+                            or ""
+                        )
+                        if isinstance(content, list):
+                            content = "".join(
+                                p.get("text", "") if isinstance(p, dict) else str(p)
+                                for p in content
+                            )
+                        if not content:
+                            continue
+
+                        _c_lower = content.lower()
+                        _hidden = any(k in _c_lower for k in (
+                            "enough credits", "top up",
+                            "doesn't have enough", "not your pollinations",
+                            "quota", "rate limit", "insufficient",
+                            "payment required",
+                        ))
+                        if _hidden:
+                            fallback_needed = True
+                            fallback_reason = content[:200]
+                            _cool_down_provider(selected_model)
+                            print(f"{LOG_PREFIX} Hidden error in stream from '{selected_model}': {content[:120]}", flush=True)
+                            break
+
+                        yield ("text", content)
+                    return
+
+    except httpx.ConnectError as e:
+        raise Exception(f"Cannot connect to OmniRoute at {OMNIROUTE_BASE_URL}. Is it running? ({e})")
+    except httpx.ReadTimeout:
+        fallback_needed = True
+        fallback_reason = "Read Timeout (90s)"
+        print(f"{LOG_PREFIX} Timeout for '{selected_model}', trying fallback...", flush=True)
+
+    if not fallback_needed:
+        return
+
+    if _depth >= 5:
+        raise Exception(f"Max fallback depth reached for '{model_name}'. Last: {fallback_reason}")
+
+    if selected_model not in _tried:
+        _tried.append(selected_model)
+
+    next_candidates = [
+        m for m in chain
+        if m not in _tried and not _provider_is_cooling(m)
+    ]
+    if not next_candidates:
+        next_candidates = [
+            m for m in ULTIMATE_FALLBACKS
+            if m not in _tried and not _provider_is_cooling(m)
+        ]
+    if not next_candidates:
+        raise Exception(f"Exhausted all fallbacks for '{model_name}'. Tried: {_tried}. Cooldowns: {dict(_provider_cooldown)}")
+
+    last_error = None
+    for fallback_model in next_candidates:
+        print(f"{LOG_PREFIX} [{_depth + 1}] '{selected_model}' -> fallback '{fallback_model}'", flush=True)
+        yield ("badge", f"{fallback_model} (fallback)")
+        try:
+            async for item in call_omniroute_stream(messages_history, fallback_model, _depth + 1, _tried):
+                if item[0] == "badge":
+                    continue
+                yield item
+            return
+        except Exception as e:
+            last_error = e
+            print(f"{LOG_PREFIX} Fallback '{fallback_model}' failed: {e}", flush=True)
+            continue
+
+    raise Exception(f"All fallbacks failed for '{model_name}'. Last: {last_error or fallback_reason}")
+
+
+# =========================================================
+# STREAM GENERATOR (OPTIMIZED - NO ARTIFICIAL DELAY)
+# =========================================================
+async def ai_stream_generator(cid: Optional[str], full_history: list, model_name: str):
+    accumulated_text = ""
+    try:
+        async for item in call_omniroute_stream(full_history, model_name):
+            kind, value = item
+            if kind == "badge":
+                yield ("data: " + json.dumps({"__model_badge__": value}, ensure_ascii=False) + "\n\n")
+                continue
+            if kind == "text":
+                accumulated_text += value
+                yield ("data: " + json.dumps({"choices": [{"delta": {"content": value}}]}, ensure_ascii=False) + "\n\n")
+                # تم حذف asyncio.sleep(0.005) التي كانت تسبب البطء
+    except Exception as e:
+        print("=" * 68)
+        print(f"{LOG_PREFIX} STREAM EXCEPTION:")
+        traceback.print_exc()
+        print("=" * 68)
+        error_msg = f"[{type(e).__name__}]: {str(e)}"
+        accumulated_text += "\n\n" + error_msg
+        yield ("data: " + json.dumps({"choices": [{"delta": {"content": "\n\n" + error_msg}}]}, ensure_ascii=False) + "\n\n")
+
+    yield "data: [DONE]\n\n"
+
+    if cid and accumulated_text.strip():
+        db = load_db()
+        if cid in db["conversations"]:
+            conv = db["conversations"][cid]
+            full_history.append({"role": "assistant", "content": accumulated_text})
+            conv["messages"] = full_history
+            conv["updated_at"] = time.time()
+            if conv.get("title") in (None, "", "New Conversation"):
+                title = extract_title_from_messages(full_history)
+                if title:
+                    conv["title"] = title[:30] + ("..." if len(title) > 30 else "")
+            db["conversations"][cid] = conv
+            save_db(db)
+
+# =========================================================
+# CHAT ENDPOINT
+# =========================================================
+@app.post("/api/chat")
+async def chat_endpoint(req: ChatRequestModel, request: Request):
+
+    async def cancellable_stream():
+        try:
+            async for chunk in ai_stream_generator(
+                req.conversation_id, req.messages, req.model,
+            ):
+                if await request.is_disconnected():
+                    print(f"{LOG_PREFIX} Client disconnected - stopping stream", flush=True)
+                    break
+                yield chunk
+        except asyncio.CancelledError:
+            print(f"{LOG_PREFIX} Stream cancelled by client", flush=True)
+            raise
+        except Exception as e:
+            print(f"{LOG_PREFIX} Unexpected chat stream error: {e}", flush=True)
+            raise
+
+    return StreamingResponse(
+        cancellable_stream(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+# =========================================================
+# STATIC FILES
+# =========================================================
+@app.get("/")
+async def serve_index():
+    if os.path.exists("index.html"):
+        return FileResponse("index.html")
+    return HTMLResponse("<h1>index.html not found!</h1>", status_code=404)
+
+# =========================================================
+# MODELS CATALOG
+# =========================================================
+@app.get("/api/models/catalog")
+async def get_catalog():
+    """ÙŠØ±Ø¬Ø¹ Ø§Ù„ÙƒØªØ§Ù„ÙˆØ¬ Ø§Ù„ÙƒØ§Ù…Ù„ Ù„Ù„Ù…ÙˆØ¯ÙŠÙ„Ø§Øª (12,411 Ù…ÙˆØ¯ÙŠÙ„)."""
+    if not os.path.exists("catalog.json"):
+        raise HTTPException(status_code=404, detail="catalog.json not found. Run build_catalog.py first.")
+    try:
+        with open("catalog.json", "r", encoding="utf-8") as f:
+            return JSONResponse(content=json.load(f))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Catalog read error: {str(e)}")
+
+
+@app.get("/api/models/categories")
+async def get_categories():
+    """ÙŠØ±Ø¬Ø¹ Ø§Ù„ÙØ¦Ø§Øª Ø§Ù„Ø£Ø±Ø¨Ø¹ ÙÙ‚Ø· (Smart / Coding / Rapid / Auto)."""
+    if not os.path.exists("catalog.json"):
+        raise HTTPException(status_code=404, detail="catalog.json not found")
+    try:
+        with open("catalog.json", "r", encoding="utf-8") as f:
+            cat = json.load(f)
+        return JSONResponse(content={
+            "categories": cat.get("categories", {}),
+            "counts": cat.get("counts", {}),
+        })
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Catalog read error: {str(e)}")
+
+
+@app.get("/api/models/providers")
+async def get_providers():
+    """ÙŠØ±Ø¬Ø¹ Ø§Ù„Ù…Ø²ÙˆØ¯ÙŠÙ† ÙÙ‚Ø· (Ø¨Ø¯ÙˆÙ† Ù…ÙˆØ¯ÙŠÙ„Ø§Øª)."""
+    if not os.path.exists("catalog.json"):
+        raise HTTPException(status_code=404, detail="catalog.json not found")
+    try:
+        with open("catalog.json", "r", encoding="utf-8") as f:
+            cat = json.load(f)
+        providers = [
+            {k: v for k, v in p.items() if k != "models"}
+            for p in cat.get("providers", [])
+        ]
+        return JSONResponse(content={"providers": providers})
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Catalog read error: {str(e)}")
+
+
+@app.get("/monster_logo.png")
+async def serve_logo():
+    for name in ("monster_logo.png", "monster_logo.png.png"):
+        if os.path.exists(name):
+            return FileResponse(name, media_type="image/png")
+    return HTMLResponse("", status_code=404)
+
+
+@app.get("/favicon.ico")
+async def serve_favicon():
+    for name in ("monster_logo.png", "monster_logo.png.png"):
+        if os.path.exists(name):
+            return FileResponse(name, media_type="image/png")
+    return HTMLResponse("", status_code=404)
+
+
+# =========================================================
+# MAIN
+# =========================================================
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=False)

@@ -1,0 +1,76 @@
+{
+  "routes": {
+    "auto/smart": [
+      "pollinations/tomdacatto/claude-opus-4-7",
+      "pol/tomdacatto/claude-opus-4-7",
+      "xao/grok-4.20-0309-non-reasoning",
+      "openrouter/qwen/qwen3-vl-8b-thinking",
+      "openrouter/upstage/solar-pro4",
+      "openrouter/perplexity/sonar-reasoning-pro",
+      "openrouter/qwen/qwen3-235b-a22b-thinking-2507",
+      "openrouter/qwen/qwen3-vl-235b-a22b-thinking"
+    ],
+    "auto/coding": [
+      "pol/qwen-coder",
+      "pollinations/qwen-coder",
+      "openrouter/qwen/qwen-2.5-coder-32b-instruct",
+      "openrouter/openrouter/pareto-code",
+      "openrouter/qwen/qwen3-coder",
+      "openrouter/qwen/qwen3-coder-flash",
+      "openrouter/qwen/qwen3-coder-30b-a3b-instruct",
+      "openrouter/qwen/qwen3-coder-plus"
+    ],
+    "auto/fast": [
+      "pol/iotserver24/deepseek-fast",
+      "pol/chigwell/llm7-fast",
+      "pol/deepseek/deepseek-v4-flash-vision-exp",
+      "pol/gemini-flash-lite-3.1",
+      "pollinations/openai-fast",
+      "pol/minimax",
+      "pollinations/z-ai/glm-5.3-flash",
+      "pol/z-ai/glm-5.3-flash"
+    ],
+    "auto/reasoning": [
+      "pollinations/tomdacatto/claude-opus-4-7",
+      "pol/tomdacatto/claude-opus-4-7",
+      "xao/grok-4.20-0309-non-reasoning",
+      "openrouter/qwen/qwen3-vl-8b-thinking",
+      "openrouter/upstage/solar-pro4",
+      "openrouter/perplexity/sonar-reasoning-pro",
+      "openrouter/qwen/qwen3-235b-a22b-thinking-2507",
+      "openrouter/qwen/qwen3-vl-235b-a22b-thinking"
+    ],
+    "auto/vision": [
+      "pol/gpt-5.6-sol",
+      "pol/gpt-5.6-luna",
+      "pollinations/gpt-5.6-sol",
+      "pollinations/gpt-5.6-luna",
+      "pol/NamanSoni78/gpt-5.4-nano",
+      "pollinations/NamanSoni78/gpt-5.4-nano",
+      "pollinations/gemini-flash-lite-3.1",
+      "pollinations/deepseek/deepseek-v4-flash-vision-exp"
+    ],
+    "auto/cheap": [
+      "pol/gpt-oss",
+      "pol/gpt-5.6-sol",
+      "pol/grok-4.6",
+      "pol/gpt-5.6-luna",
+      "pol/grok-large",
+      "pol/gggff123/Glm-5.3",
+      "pollinations/openai-large",
+      "pol/iotserver24/deepseek-fast"
+    ],
+    "auto/balanced": [
+      "pol/gpt-oss",
+      "pol/gpt-5.6-sol",
+      "pol/grok-4.6",
+      "pol/gpt-5.6-luna",
+      "pol/grok-large",
+      "pol/gggff123/Glm-5.3",
+      "pollinations/openai-large",
+      "pol/iotserver24/deepseek-fast"
+    ]
+  },
+  "chains_text": "see above",
+  "total_working": 1044
+}

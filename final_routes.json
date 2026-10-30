@@ -1,0 +1,239 @@
+{
+  "generated_at": "2026-09-18 21:22:25",
+  "total_working": 78,
+  "routes": {
+    "auto/smart": [
+      "pol/minimax",
+      "pol/gpt-5.6-terra",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol",
+      "agy/gemini-3.1-pro-low"
+    ],
+    "auto/coding": [
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra",
+      "pol/z-ai/glm-5.3-flash",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol"
+    ],
+    "auto/fast": [
+      "pol/gpt-oss",
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ],
+    "auto/reasoning": [
+      "agy/gemini-3.1-pro-low",
+      "agy/gemini-3.1-pro-high",
+      "xai-oauth/grok-4.20-0309-non-reasoning",
+      "xai-oauth/grok-4.20-0309-reasoning"
+    ],
+    "auto/vision": [
+      "pol/gpt-5.6-terra",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol",
+      "pol/deepseek/deepseek-v4-flash-vision-exp",
+      "agy/gemini-3.1-pro-low"
+    ],
+    "auto/cheap": [
+      "pol/gpt-oss",
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ],
+    "auto/balanced": [
+      "pol/gpt-oss",
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ]
+  },
+  "fallback_chains": {
+    "auto/smart": [
+      "pol/minimax",
+      "pol/gpt-5.6-terra",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol",
+      "agy/gemini-3.1-pro-low"
+    ],
+    "auto/coding": [
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra",
+      "pol/z-ai/glm-5.3-flash",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol"
+    ],
+    "auto/fast": [
+      "pol/gpt-oss",
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ],
+    "auto/reasoning": [
+      "agy/gemini-3.1-pro-low",
+      "agy/gemini-3.1-pro-high",
+      "xai-oauth/grok-4.20-0309-non-reasoning",
+      "xai-oauth/grok-4.20-0309-reasoning"
+    ],
+    "auto/vision": [
+      "pol/gpt-5.6-terra",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol",
+      "pol/deepseek/deepseek-v4-flash-vision-exp",
+      "agy/gemini-3.1-pro-low"
+    ],
+    "auto/cheap": [
+      "pol/gpt-oss",
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ],
+    "auto/balanced": [
+      "pol/gpt-oss",
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ],
+    "pol/minimax": [
+      "pol/gpt-5.6-terra",
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol"
+    ],
+    "pol/gpt-5.6-terra": [
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol",
+      "agy/gemini-3.1-pro-low"
+    ],
+    "pol/gpt-5.6-luna": [
+      "pol/gpt-5.6-sol",
+      "agy/gemini-3.1-pro-low"
+    ],
+    "pol/gpt-5.6-sol": [
+      "agy/gemini-3.1-pro-low"
+    ],
+    "agy/gemini-3.1-pro-low": [
+      "pol/minimax",
+      "pol/gpt-5.6-terra"
+    ],
+    "pol/kimi-code": [
+      "pol/gpt-5.6-terra",
+      "pol/z-ai/glm-5.3-flash",
+      "pol/gpt-5.6-luna"
+    ],
+    "pol/z-ai/glm-5.3-flash": [
+      "pol/gpt-5.6-luna",
+      "pol/gpt-5.6-sol"
+    ],
+    "pol/gpt-oss": [
+      "pol/perplexity",
+      "pol/minimax",
+      "pol/kimi-code"
+    ],
+    "pol/perplexity": [
+      "pol/minimax",
+      "pol/kimi-code",
+      "pol/gpt-5.6-terra"
+    ],
+    "agy/gemini-3.1-pro-high": [
+      "xai-oauth/grok-4.20-0309-non-reasoning",
+      "xai-oauth/grok-4.20-0309-reasoning"
+    ],
+    "xai-oauth/grok-4.20-0309-non-reasoning": [
+      "xai-oauth/grok-4.20-0309-reasoning"
+    ],
+    "xai-oauth/grok-4.20-0309-reasoning": [
+      "pol/minimax",
+      "pol/gpt-5.6-terra"
+    ],
+    "pol/deepseek/deepseek-v4-flash-vision-exp": [
+      "agy/gemini-3.1-pro-low"
+    ]
+  },
+  "ultimate_fallback": "pol/minimax",
+  "all_working": {
+    "pol/gpt-oss": 0,
+    "pol/perplexity": 0,
+    "pol/minimax": 0,
+    "pol/kimi-code": 0,
+    "pol/gpt-5.6-terra": 0,
+    "pol/z-ai/glm-5.3-flash": 0,
+    "pol/gpt-5.6-luna": 0,
+    "pol/gpt-5.6-sol": 0,
+    "pol/command-a-plus": 0,
+    "pol/deepseek/deepseek-v4-flash-vision-exp": 0,
+    "pol/kimi-k3": 0,
+    "pol/openai": 0,
+    "pol/grok-4.6": 0,
+    "pol/glm-5.3": 0,
+    "pol/nemotron-3.5-lightning": 0,
+    "pol/muse-glimmer": 0,
+    "pol/qwen3.8-2.4t-a95b": 0,
+    "glm/glm-4.7": 0,
+    "agy/gemini-3.1-pro-low": 0,
+    "agy/gemini-3.1-flash-lite": 0,
+    "agy/gemini-3.1-pro-high": 0,
+    "glm/glm-5.2-max": 0,
+    "glm/glm-4.5": 0,
+    "glm/glm-4.5-air": 0,
+    "glm/glm-5-turbo": 0,
+    "agy/gemini-3.7-flash-tiered": 0,
+    "agy/gemini-3.1-flash-image": 0,
+    "agy/gemini-3.6-flash-low": 0,
+    "glm/glm-5.2-high": 0,
+    "glm/glm-4.6": 0,
+    "agy/gemini-3-flash": 0,
+    "agy/gemini-3.5-flash-lite": 0,
+    "agy/gemini-pro-agent": 0,
+    "glm/glm-5.3-max": 0,
+    "glm/glm-5.2": 0,
+    "glm/glm-5": 0,
+    "glm/glm-5.1": 0,
+    "glm/glm-5.3-flash": 0,
+    "agy/gemini-3.7-flash-medium": 0,
+    "agy/gemini-3.7-flash-low": 0,
+    "glm/glm-5.3-high": 0,
+    "glm/glm-5.3-low": 0,
+    "agy/gemini-3.6-flash-tiered": 0,
+    "xai-oauth/grok-4.20-0309-non-reasoning": 0,
+    "agy/gemini-3.7-flash-high": 0,
+    "agy/gemini-3.8-flash-tiered": 0,
+    "glm/glm-5.3": 0,
+    "xai-oauth/grok-4.20-0309-reasoning": 0,
+    "gemini/gemini-3-flash-preview": 1.74,
+    "gemini/gemini-3.1-flash-lite": 1.95,
+    "groq/openai/gpt-oss-120b": 2.29,
+    "groq/meta-llama/llama-4-scout-17b-16e-instruct": 2.3,
+    "groq/llama-3.3-70b-versatile": 2.3,
+    "cerebras/gpt-oss-120b": 2.3,
+    "cerebras/gemma-4-31b": 2.31,
+    "groq/openai/gpt-oss-20b": 2.32,
+    "groq/qwen/qwen3-32b": 2.33,
+    "cerebras/zai-glm-4.7": 2.35,
+    "moonshot/kimi-k2.7-code": 2.29,
+    "moonshot/kimi-k2.6": 2.33,
+    "cohere/command-a-03-2025": 1.37,
+    "ollama-cloud/gpt-oss:20b": 2.0,
+    "friendli/zai-org/GLM-5.3": 2.29,
+    "friendliai/zai-org/GLM-5.3": 2.37,
+    "cursor/cursor-grok-4.6-low-fast": 1.11,
+    "cu/cursor-grok-4.6-low-fast": 1.24,
+    "cursor/cursor-grok-4.6-low": 2.13,
+    "cu/cursor-grok-4.6-low": 2.19,
+    "mimo/mimo-v2.5": 2.29,
+    "cu/default": 2.3,
+    "cursor/default": 2.32,
+    "kmc/kimi-for-coding-highspeed": 2.32,
+    "mimo/mimo-v2.5-pro": 2.36,
+    "kmc/kimi-for-coding": 2.4,
+    "kilocode/kilo-auto/free": 2.94,
+    "kilocode/kilo-auto/efficient": 3.07,
+    "kc/kilo-auto/free": 3.25,
+    "kc/kilo-auto/efficient": 3.32
+  }
+}

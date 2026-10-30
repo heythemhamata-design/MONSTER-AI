@@ -1,0 +1,11 @@
+{
+    "messages":  [
+                     {
+                         "content":  "Reply with exactly MONSTER-STREAM-OK. Do not add anything else.",
+                         "role":  "user"
+                     }
+                 ],
+    "conversation_id":  null,
+    "model":  "auto/smart",
+    "stream":  true
+}

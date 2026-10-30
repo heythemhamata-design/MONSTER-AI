@@ -1,0 +1,1383 @@
+{
+  "pol/grok-4.6": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.5934865,
+    "last_fail": 1789689921.4532018,
+    "last_latency": 1.09,
+    "cooldown_until": 0
+  },
+  "pol/gpt-oss": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.581579,
+    "last_fail": null,
+    "last_latency": 0.88,
+    "cooldown_until": 0
+  },
+  "pol/kimi-k3": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.6063936,
+    "last_fail": null,
+    "last_latency": 1.06,
+    "cooldown_until": 0
+  },
+  "pol/deepseek-pro": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789689921.4872496,
+    "last_fail": null,
+    "last_latency": 1.5,
+    "cooldown_until": 0
+  },
+  "pol/gpt-5.6-luna": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.6180189,
+    "last_fail": null,
+    "last_latency": 0.99,
+    "cooldown_until": 0
+  },
+  "pol/glm-5.3": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.5244157,
+    "last_fail": null,
+    "last_latency": 1.14,
+    "cooldown_until": 0
+  },
+  "pol/llama": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789689921.5119312,
+    "last_fail": null,
+    "last_latency": 2.76,
+    "cooldown_until": 0
+  },
+  "pol/command-a-plus": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.5693438,
+    "last_fail": null,
+    "last_latency": 1.01,
+    "cooldown_until": 0
+  },
+  "gh/gpt-5.6-luna": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789689921.5307858,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is"
+  },
+  "gh/gpt-5.6-sol": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789689921.5386555,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is"
+  },
+  "gh/claude-sonnet-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.9034722,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-sonnet-5] [400]: The requested model is not supported. (reset after 2m)\"}}"
+  },
+  "gh/claude-opus-4.8": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.8799531,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-opus-4.8] [400]: The requested model is not supported. (reset after 2m)\"}}"
+  },
+  "gh/gemini-3.7-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.0196025,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/kimi-k3": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789689921.577785,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is"
+  },
+  "oc/claude-sonnet-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.17153,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.6-luna": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.348024,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.6-sol": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.3251197,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3.7-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.2542949,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/kimi-k3": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789689921.6320164,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/deepseek-v4-flash-free": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789689921.6441016,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[400]: Error from provider (Console): Upstream request failed: Model is unavailable.\",\"type\":\"server_error\",\"code\":\"bad_request\"},\"upstream_details\":{\"error\":{\"type\":\"se"
+  },
+  "xai-oauth/grok-4.5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.9290917,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.5] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/supergrok. "
+  },
+  "glm/glm-5.3": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.433971,
+    "last_fail": null,
+    "last_latency": 2.33,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.3-flash": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.6298013,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.2": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.4813197,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "pol/mistral": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.3255684,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mistral' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/gemini": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.3378043,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/gemini-flash-lite-3.1": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.3513296,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-flash-lite-3.1' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/gemini-fast": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.363759,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/gemini-search": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.3763661,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-search' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/claude-fast": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.3876643,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-fast' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/claude": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.4001565,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/claude-large": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.4114633,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/gemini-large": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.4232945,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/polly": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.4343817,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'polly' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/qwen-coder-large": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.449453,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen-coder-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/qwen-large": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.4640238,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen-large' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/qwen-vision": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.476337,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'qwen-vision' is not available in the active live catalog for provider 'pollinations'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "pol/openai": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.489176,
+    "last_fail": null,
+    "last_latency": 1.08,
+    "cooldown_until": 0
+  },
+  "pol/deepseek/deepseek-v4-flash-vision-exp": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.5015702,
+    "last_fail": null,
+    "last_latency": 1.03,
+    "cooldown_until": 0
+  },
+  "pol/z-ai/glm-5.3-flash": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.512567,
+    "last_fail": null,
+    "last_latency": 0.97,
+    "cooldown_until": 0
+  },
+  "pol/nemotron-3.5-lightning": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.5355623,
+    "last_fail": null,
+    "last_latency": 1.15,
+    "cooldown_until": 0
+  },
+  "pol/muse-glimmer": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.546751,
+    "last_fail": null,
+    "last_latency": 1.27,
+    "cooldown_until": 0
+  },
+  "pol/qwen3.8-2.4t-a95b": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.5584605,
+    "last_fail": null,
+    "last_latency": 1.28,
+    "cooldown_until": 0
+  },
+  "pol/gpt-5.6-sol": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.6300013,
+    "last_fail": null,
+    "last_latency": 1.0,
+    "cooldown_until": 0
+  },
+  "pol/gpt-5.6-terra": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.6417427,
+    "last_fail": null,
+    "last_latency": 0.94,
+    "cooldown_until": 0
+  },
+  "pol/kimi-code": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.6527953,
+    "last_fail": null,
+    "last_latency": 0.93,
+    "cooldown_until": 0
+  },
+  "pol/minimax": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.6649141,
+    "last_fail": null,
+    "last_latency": 0.92,
+    "cooldown_until": 0
+  },
+  "pol/perplexity": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748130.677122,
+    "last_fail": null,
+    "last_latency": 0.89,
+    "cooldown_until": 0
+  },
+  "gh/claude-opus-4.6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.687837,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/claude-sonnet-4.6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.6994848,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/claude-opus-4.5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.7128522,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-opus-4-5-20251101' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/claude-sonnet-4.5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.723705,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'claude-sonnet-4.5' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/gemini-3.1-pro-preview": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.7345943,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gemini-3.1-pro-preview' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/gpt-5.3-codex": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.7482042,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-5.3-codex' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/gpt-4-0125-preview": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.7589037,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'gpt-4-0125-preview' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/mai-code-1-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.769934,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mai-code-1-flash' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/mai-code-1-flash-picker": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.7808056,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'mai-code-1-flash-picker' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/grok-4.6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.7916055,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/grok-4.5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.8035061,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.5' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/oswe-vscode-prime": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.814435,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'oswe-vscode-prime' is not available in the active live catalog for provider 'github'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "gh/claude-fable-5.1": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.8264484,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is"
+  },
+  "gh/claude-fable-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.8386486,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-fable-5] [400]: The requested model is not supported. (reset after 2m)\"}}"
+  },
+  "gh/claude-opus-4.7": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.8536704,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-opus-4.7] [400]: The requested model is not supported. (reset after 2m)\"}}"
+  },
+  "gh/claude-opus-4.8-fast": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.8686137,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[400]: The requested model is not supported.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_supported\"},\"upstream_details\":{\"error\":{\"message\":\"The requested model is"
+  },
+  "gh/claude-opus-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.892013,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"[github/claude-opus-5] [400]: The requested model is not supported. (reset after 2m)\"}}"
+  },
+  "gh/copilot-search-a": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.9161406,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[github/copilot-search-a] [402]: You have exceeded your monthly quota (reset after 24h)\"}}"
+  },
+  "gh/copilot-search-b": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.927415,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[github/copilot-search-b] [402]: You have exceeded your monthly quota (reset after 24h)\"}}"
+  },
+  "gh/copilot-search-c": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.9392614,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[github/copilot-search-c] [402]: You have exceeded your monthly quota (reset after 24h)\"}}"
+  },
+  "gh/exec-agent-a": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.950422,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/exec-agent-b": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.9620156,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/exec-agent-c": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.972647,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/gemini-3.5-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748130.9964824,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/gemini-3.6-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.0078669,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/gemini-3.8-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.0304477,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "gh/gpt-5.4-mini": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.041426,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 401: {\"error\":{\"message\":\"[github] All 1 connection(s) credits exhausted — please reconnect in the dashboard\",\"type\":\"authentication_error\",\"code\":\"invalid_api_key\"}}"
+  },
+  "oc/hy3-free": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.0560024,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'hy3-free' is not available in the active live catalog for provider 'opencode'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "oc/north-mini-code-free": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.0677211,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'north-mini-code-free' is not available in the active live catalog for provider 'opencode'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "oc/claude-fable-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.0812113,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-fable-5-1": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.094117,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-opus-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.1055064,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-opus-4-8": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.118205,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-opus-4-7": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.1330922,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-opus-4-6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.1466532,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-opus-4-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.1591356,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-sonnet-4-6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.1834774,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-sonnet-4-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.1948376,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-sonnet-4": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.2072036,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/claude-haiku-4-5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.218826,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3.6-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.2316213,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3.8-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.2430682,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3.5-flash-lite": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.268217,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3.5-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.2793052,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3.1-pro": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.2898107,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gemini-3-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.3019335,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-6-astra": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.313552,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.6-terra": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.3356082,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.5": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.3649566,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.5-pro": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.379999,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.4": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.3942938,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.4-pro": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.406367,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "oc/gpt-5.4-mini": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.4205565,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[402]: This model requires an opencode API key — add one in Settings → Providers.\",\"type\":\"billing_error\",\"code\":\"payment_required\"}}"
+  },
+  "glm/glm-5.3-high": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.4451082,
+    "last_fail": null,
+    "last_latency": 2.31,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.3-low": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.4572031,
+    "last_fail": null,
+    "last_latency": 2.31,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.3-max": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.4685242,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.2-high": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.49413,
+    "last_fail": null,
+    "last_latency": 2.29,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.2-max": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.5048494,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "glm/glm-4.7-flash": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.5157878,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'glm-4.7-flash' is not available in the active live catalog for provider 'glm'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "glm/glm-4.6v": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.5273952,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'glm-4.6v' is not available in the active live catalog for provider 'glm'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "glm/glm-4.5v": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.5379765,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'glm-4.5v' is not available in the active live catalog for provider 'glm'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "glm/glm-4.5": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.5492587,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "glm/glm-4.5-air": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.5599344,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "glm/glm-4.6": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.5709112,
+    "last_fail": null,
+    "last_latency": 2.29,
+    "cooldown_until": 0
+  },
+  "glm/glm-4.7": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.5820973,
+    "last_fail": null,
+    "last_latency": 2.27,
+    "cooldown_until": 0
+  },
+  "glm/glm-5": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.5927804,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "glm/glm-5-turbo": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.607279,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "glm/glm-5.1": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.618933,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.7-flash-high": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.6405983,
+    "last_fail": null,
+    "last_latency": 2.32,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.7-flash-medium": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.6523218,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.7-flash-low": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.6639345,
+    "last_fail": null,
+    "last_latency": 2.3,
+    "cooldown_until": 0
+  },
+  "agy/claude-sonnet-4-6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.1306355,
+    "last_fail": 1789748131.675739,
+    "last_latency": 2.36,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/claude-opus-4-6-thinking": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.1527205,
+    "last_fail": 1789748131.7479465,
+    "last_latency": 2.4,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/gemini-3-flash": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.735521,
+    "last_fail": null,
+    "last_latency": 2.29,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.6-flash-tiered": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.7936335,
+    "last_fail": null,
+    "last_latency": 2.31,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.1-flash-image": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.8068135,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.1-pro-high": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.8179388,
+    "last_fail": null,
+    "last_latency": 2.27,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.5-flash-lite": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.7590475,
+    "last_fail": null,
+    "last_latency": 2.29,
+    "cooldown_until": 0
+  },
+  "agy/gemini-pro-agent": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.7824707,
+    "last_fail": null,
+    "last_latency": 2.29,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.1-flash-lite": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.7711244,
+    "last_fail": null,
+    "last_latency": 2.27,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.7-flash-tiered": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.7132614,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.1-pro-low": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.700704,
+    "last_fail": null,
+    "last_latency": 2.27,
+    "cooldown_until": 0
+  },
+  "agy/gpt-oss-120b-medium": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.3432508,
+    "last_fail": 1789748131.724294,
+    "last_latency": 2.36,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/gpt-oss-120b-medium] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/gemini-3.8-flash-tiered": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.6894403,
+    "last_fail": null,
+    "last_latency": 2.32,
+    "cooldown_until": 0
+  },
+  "agy/gemini-3.6-flash-low": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.830188,
+    "last_fail": null,
+    "last_latency": 2.28,
+    "cooldown_until": 0
+  },
+  "agy/claude-sonnet-4-6-low": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.4057777,
+    "last_fail": 1789748131.8413632,
+    "last_latency": 2.29,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6-low] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/claude-sonnet-4-6-medium": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.4288926,
+    "last_fail": 1789748131.8524883,
+    "last_latency": 2.3,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6-medium] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/claude-sonnet-4-6-high": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.450535,
+    "last_fail": 1789748131.8666337,
+    "last_latency": 2.12,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-sonnet-4-6-high] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/claude-opus-4-6-thinking-low": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.485741,
+    "last_fail": 1789748131.8783667,
+    "last_latency": 2.3,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking-low] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/claude-opus-4-6-thinking-medium": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.5080183,
+    "last_fail": 1789748131.8915231,
+    "last_latency": 2.29,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking-medium] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "agy/claude-opus-4-6-thinking-high": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690383.5299077,
+    "last_fail": 1789748131.9043682,
+    "last_latency": 2.31,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 429: {\"error\":{\"message\":\"[antigravity/claude-opus-4-6-thinking-high] All antigravity accounts have exhausted their quota (reset after 5m)\"}}"
+  },
+  "xai-oauth/grok-4.6": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.9164128,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "xai-oauth/grok-4.3": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.94164,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.3] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/supergrok. "
+  },
+  "xai-oauth/grok-build-0.1": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.9536016,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-build-0.1] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://grok.com/super"
+  },
+  "xai-oauth/grok-4.20-multi-agent-0309": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748131.965895,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 402: {\"error\":{\"message\":\"[xai-oauth/grok-4.20-multi-agent-0309] [402]: You have run out of credits or need a Grok subscription. Add credits at https://grok.com/?_s=usage or upgrade at https://gr"
+  },
+  "xai-oauth/grok-4.20-0309-reasoning": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.9788156,
+    "last_fail": 1789690383.6632605,
+    "last_latency": 2.34,
+    "cooldown_until": 0
+  },
+  "xai-oauth/grok-4.20-0309-non-reasoning": {
+    "status": "closed",
+    "fail_count": 0,
+    "last_ok": 1789748131.994539,
+    "last_fail": 1789690383.6816273,
+    "last_latency": 2.31,
+    "cooldown_until": 0
+  },
+  "xai-oauth/grok-4.6-low": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748132.0070596,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-low' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "xai-oauth/grok-4.6-medium": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748132.018105,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-medium' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "xai-oauth/grok-4.6-high": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748132.0294964,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-high' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "xai-oauth/grok-4.6-xhigh": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789748132.0414221,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "HTTP 400: {\"error\":{\"message\":\"Model 'grok-4.6-xhigh' is not available in the active live catalog for provider 'xai-oauth'.\",\"type\":\"invalid_request_error\",\"code\":\"bad_request\"}}"
+  },
+  "auto/best-coding": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.457612,
+    "last_fail": 1789690730.6500807,
+    "last_latency": 8.58,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/best-reasoning": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.472203,
+    "last_fail": 1789690730.6717548,
+    "last_latency": 8.44,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/best-fast": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.4856188,
+    "last_fail": 1789690730.690977,
+    "last_latency": 8.42,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/best-chat": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.499542,
+    "last_fail": 1789690730.706803,
+    "last_latency": 8.43,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/best-vision": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.514311,
+    "last_fail": 1789690730.725379,
+    "last_latency": 8.42,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/pro-coding": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.5280225,
+    "last_fail": 1789690730.7402084,
+    "last_latency": 8.41,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/pro-reasoning": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": 1789690648.5427868,
+    "last_fail": 1789690730.756375,
+    "last_latency": 8.4,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/pro-vision": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789690730.7749374,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/pro-chat": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789690730.7933395,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  },
+  "auto/best-coding-fast": {
+    "status": "degraded",
+    "fail_count": 0,
+    "last_ok": null,
+    "last_fail": 1789690730.8085682,
+    "last_latency": null,
+    "cooldown_until": 0,
+    "last_reason": "ReadTimeout: "
+  }
+}
